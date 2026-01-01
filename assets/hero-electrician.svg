@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="yellowGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fcd34d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.6" />
+      <stop offset="70%" style="stop-color:#fbbf24;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:0" />
+    </radialGradient>
+
+    <radialGradient id="outerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Filters for glow effects -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Circles -->
+  <circle cx="250" cy="250" r="220" fill="url(#outerGlow)"/>
+  <circle cx="250" cy="250" r="180" fill="#dbeafe" opacity="0.3"/>
+  <circle cx="250" cy="250" r="120" fill="url(#centerGlow)"/>
+
+  <!-- Outer Circuit Ring -->
+  <circle cx="250" cy="250" r="200" fill="none" stroke="#1e40af" stroke-width="2" stroke-dasharray="10 5" opacity="0.4"/>
+  <circle cx="250" cy="250" r="160" fill="none" stroke="#3b82f6" stroke-width="1" stroke-dasharray="5 10" opacity="0.3"/>
+
+  <!-- Circuit Board Lines -->
+  <g opacity="0.4" stroke="#1e40af" stroke-width="2" fill="none">
+    <!-- Horizontal lines -->
+    <path d="M50 150 L120 150 L140 170 L180 170"/>
+    <path d="M50 250 L100 250 L120 230 L150 230"/>
+    <path d="M50 350 L130 350 L150 330 L190 330"/>
+
+    <path d="M320 170 L360 170 L380 150 L450 150"/>
+    <path d="M350 230 L380 230 L400 250 L450 250"/>
+    <path d="M310 330 L350 330 L370 350 L450 350"/>
+
+    <!-- Vertical lines -->
+    <path d="M150 50 L150 100 L170 120 L170 160"/>
+    <path d="M350 50 L350 100 L330 120 L330 160"/>
+    <path d="M150 340 L150 390 L170 410 L170 450"/>
+    <path d="M350 340 L350 390 L330 410 L330 450"/>
+  </g>
+
+  <!-- Circuit Nodes -->
+  <g fill="#1e40af">
+    <circle cx="120" cy="150" r="5" opacity="0.6"/>
+    <circle cx="100" cy="250" r="5" opacity="0.6"/>
+    <circle cx="130" cy="350" r="5" opacity="0.6"/>
+    <circle cx="380" cy="150" r="5" opacity="0.6"/>
+    <circle cx="380" cy="250" r="5" opacity="0.6"/>
+    <circle cx="370" cy="350" r="5" opacity="0.6"/>
+    <circle cx="150" cy="100" r="5" opacity="0.6"/>
+    <circle cx="350" cy="100" r="5" opacity="0.6"/>
+    <circle cx="150" cy="390" r="5" opacity="0.6"/>
+    <circle cx="350" cy="390" r="5" opacity="0.6"/>
+  </g>
+
+  <!-- Glowing Circuit Nodes -->
+  <g fill="#fbbf24" filter="url(#glow)">
+    <circle cx="180" cy="170" r="6"/>
+    <circle cx="320" cy="170" r="6"/>
+    <circle cx="190" cy="330" r="6"/>
+    <circle cx="310" cy="330" r="6"/>
+  </g>
+
+  <!-- Central Power Symbol / Lightning Hub -->
+  <g transform="translate(250, 250)">
+    <!-- Outer ring -->
+    <circle cx="0" cy="0" r="85" fill="none" stroke="url(#blueGlow)" stroke-width="4" opacity="0.8"/>
+
+    <!-- Inner glowing circle -->
+    <circle cx="0" cy="0" r="70" fill="#1e40af" opacity="0.1"/>
+    <circle cx="0" cy="0" r="60" fill="#1e40af" opacity="0.15"/>
+
+    <!-- Main Lightning Bolt -->
+    <g filter="url(#strongGlow)">
+      <path d="M15 -55 L-20 -5 L5 -5 L-15 55 L25 0 L0 0 Z" fill="url(#yellowGlow)"/>
+    </g>
+
+    <!-- Lightning bolt outline glow -->
+    <path d="M15 -55 L-20 -5 L5 -5 L-15 55 L25 0 L0 0 Z" fill="none" stroke="#fcd34d" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <!-- Energy Waves radiating outward -->
+  <g fill="none" stroke-width="2">
+    <!-- Wave 1 -->
+    <path d="M250 130 Q280 145 250 160" stroke="#fbbf24" opacity="0.6" filter="url(#glow)"/>
+    <path d="M250 130 Q220 145 250 160" stroke="#fbbf24" opacity="0.6" filter="url(#glow)"/>
+
+    <!-- Wave 2 -->
+    <path d="M250 340 Q280 355 250 370" stroke="#fbbf24" opacity="0.6" filter="url(#glow)"/>
+    <path d="M250 340 Q220 355 250 370" stroke="#fbbf24" opacity="0.6" filter="url(#glow)"/>
+
+    <!-- Wave 3 -->
+    <path d="M130 250 Q145 220 160 250" stroke="#fbbf24" opacity="0.6" filter="url(#glow)"/>
+    <path d="M130 250 Q145 280 160 250" stroke="#fbbf24" opacity="0.6" filter="url(#glow)"/>
+
+    <!-- Wave 4 -->
+    <path d="M340 250 Q355 220 370 250" stroke="#fbbf24" opacity="0.6" filter="url(#glow)"/>
+    <path d="M340 250 Q355 280 370 250" stroke="#fbbf24" opacity="0.6" filter="url(#glow)"/>
+  </g>
+
+  <!-- Corner Lightning Bolts -->
+  <!-- Top Left -->
+  <g filter="url(#glow)" transform="translate(80, 80)">
+    <path d="M20 0 L5 25 L15 25 L0 50 L25 20 L15 20 Z" fill="#fbbf24" opacity="0.8"/>
+  </g>
+
+  <!-- Top Right -->
+  <g filter="url(#glow)" transform="translate(380, 70)">
+    <path d="M25 0 L10 25 L20 25 L5 50 L30 20 L20 20 Z" fill="#fbbf24" opacity="0.8"/>
+  </g>
+
+  <!-- Bottom Left -->
+  <g filter="url(#glow)" transform="translate(70, 370)">
+    <path d="M20 0 L5 25 L15 25 L0 50 L25 20 L15 20 Z" fill="#fbbf24" opacity="0.7"/>
+  </g>
+
+  <!-- Bottom Right -->
+  <g filter="url(#glow)" transform="translate(390, 380)">
+    <path d="M20 0 L5 25 L15 25 L0 50 L25 20 L15 20 Z" fill="#fbbf24" opacity="0.7"/>
+  </g>
+
+  <!-- Floating Energy Particles -->
+  <g fill="#fbbf24" filter="url(#glow)">
+    <circle cx="120" cy="200" r="4" opacity="0.7"/>
+    <circle cx="380" cy="200" r="4" opacity="0.7"/>
+    <circle cx="120" cy="300" r="3" opacity="0.5"/>
+    <circle cx="380" cy="300" r="3" opacity="0.5"/>
+    <circle cx="200" cy="120" r="3" opacity="0.6"/>
+    <circle cx="300" cy="120" r="3" opacity="0.6"/>
+    <circle cx="200" cy="380" r="4" opacity="0.6"/>
+    <circle cx="300" cy="380" r="4" opacity="0.6"/>
+  </g>
+
+  <!-- Small Sparkles -->
+  <g fill="#ffffff" opacity="0.8">
+    <circle cx="175" cy="195" r="2"/>
+    <circle cx="325" cy="195" r="2"/>
+    <circle cx="175" cy="305" r="2"/>
+    <circle cx="325" cy="305" r="2"/>
+    <circle cx="195" cy="175" r="2"/>
+    <circle cx="305" cy="175" r="2"/>
+    <circle cx="195" cy="325" r="2"/>
+    <circle cx="305" cy="325" r="2"/>
+  </g>
+
+  <!-- Power/Plug Icons in corners -->
+  <!-- Top Left - Plug -->
+  <g transform="translate(45, 45)" opacity="0.6">
+    <rect x="0" y="10" width="25" height="20" rx="3" fill="#1e40af"/>
+    <rect x="5" y="0" width="4" height="12" rx="1" fill="#1e40af"/>
+    <rect x="16" y="0" width="4" height="12" rx="1" fill="#1e40af"/>
+  </g>
+
+  <!-- Top Right - Light Bulb -->
+  <g transform="translate(430, 45)" opacity="0.6">
+    <ellipse cx="12" cy="12" rx="12" ry="14" fill="#1e40af"/>
+    <rect x="6" y="24" width="12" height="8" rx="2" fill="#1e40af"/>
+    <line x1="12" y1="5" x2="12" y2="12" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+    <line x1="7" y1="10" x2="17" y2="10" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Bottom Left - House with power -->
+  <g transform="translate(40, 420)" opacity="0.6">
+    <path d="M15 12 L0 25 L30 25 Z" fill="#1e40af"/>
+    <rect x="5" y="25" width="20" height="18" fill="#1e40af"/>
+    <path d="M15 30 L12 36 L15 36 L12 42 L18 35 L15 35 Z" fill="#fbbf24"/>
+  </g>
+
+  <!-- Bottom Right - Tools -->
+  <g transform="translate(425, 425)" opacity="0.6">
+    <rect x="10" y="0" width="6" height="30" rx="2" fill="#1e40af"/>
+    <rect x="8" y="28" width="10" height="8" rx="1" fill="#fbbf24"/>
+    <rect x="25" y="5" width="20" height="6" rx="2" fill="#1e40af" transform="rotate(45, 35, 8)"/>
+  </g>
+
+  <!-- Animated pulse rings (static representation) -->
+  <circle cx="250" cy="250" r="100" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
+  <circle cx="250" cy="250" r="140" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.2"/>
+  <circle cx="250" cy="250" r="180" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.1"/>
+</svg>
