@@ -4,463 +4,739 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="TRUST MEE - Your trusted electrical service provider in Vadodara. Professional residential & commercial electrical services, home appliance repair, and 24/7 emergency solutions.">
-    <meta name="keywords" content="electrician Vadodara, electrical services, home appliance repair, wiring, MCB installation, AC repair, emergency electrician">
+    <meta name="keywords" content="electrician Vadodara, electrical services, home appliance repair, wiring, MCB installation, AC repair, emergency electrician, Trust Mee">
     <meta name="author" content="TRUST MEE">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#00B4E8">
 
-    <!-- Open Graph / Social Media -->
+    <!-- Open Graph -->
     <meta property="og:title" content="TRUST MEE - Trusted Electrical Services in Vadodara">
     <meta property="og:description" content="Professional electrical services for homes & businesses. Safe, reliable, and affordable solutions.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="TRUST MEE">
 
     <title>TRUST MEE | Electrical Services & Home Appliance Repair in Vadodara</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" href="logo/png.png">
+    <link rel="apple-touch-icon" href="logo/jpg-01.jpg">
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header / Navigation -->
+    <!-- Electric Background Animation -->
+    <div class="electric-bg"></div>
+
+    <!-- ========================================
+         HEADER
+         ======================================== -->
     <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav-logo">
-                <span class="logo-text">TRUST<span class="logo-highlight">MEE</span></span>
+        <div class="container header-inner">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
             </a>
 
-            <div class="nav-menu" id="nav-menu">
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
                 <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#services" class="nav-link">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#why-us" class="nav-link">Why Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
-                <div class="nav-close" id="nav-close">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
+            </nav>
 
-            <div class="nav-buttons">
-                <a href="tel:+916351802009" class="nav-cta">
-                    <i class="fas fa-phone"></i>
-                    <span>Call Now</span>
-                </a>
-                <div class="nav-toggle" id="nav-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero hero-centered" id="home">
-        <div class="hero-bg-pattern"></div>
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-bolt"></i>
-                    <span>Trusted Electrical Services in Vadodara</span>
-                </div>
-                <h1 class="hero-title">
-                    Professional <span class="highlight">Electrical</span> Services<br>
-                    For Your Home & Business
-                </h1>
-                <p class="hero-description">
-                    Safe, reliable, and affordable electrical solutions. From new wiring installations
-                    to emergency repairs and home appliance services - we've got you covered!
-                </p>
-
-                <div class="hero-services-preview">
-                    <div class="preview-item">
-                        <i class="fas fa-home"></i>
-                        <span>House Wiring</span>
-                    </div>
-                    <div class="preview-item">
-                        <i class="fas fa-tv"></i>
-                        <span>Appliance Repair</span>
-                    </div>
-                    <div class="preview-item">
-                        <i class="fas fa-bolt"></i>
-                        <span>Emergency Service</span>
-                    </div>
-                </div>
-
-                <div class="hero-buttons">
-                    <a href="tel:+916351802009" class="btn btn-primary btn-large">
-                        <i class="fas fa-phone"></i>
-                        Call Now: 6351802009
-                    </a>
-                    <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services.%20Please%20help." class="btn btn-whatsapp btn-large" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                        WhatsApp Us
-                    </a>
-                    <a href="#contact" class="btn btn-outline btn-large">
-                        <i class="fas fa-paper-plane"></i>
-                        Get Free Quote
-                    </a>
-                </div>
-
+            <!-- Mobile Toggle -->
+            <div class="header-cta-mobile">
+                <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
-        <div class="hero-wave">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="nav-mobile-backdrop" id="navBackdrop"></div>
+    <nav class="nav-mobile" id="navMobile">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+            </a>
+            <button class="nav-mobile-close" id="navClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="nav-mobile-body">
+            <ul class="nav-mobile-list">
+                <li>
+                    <a href="index.html" class="nav-mobile-link active">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="services.html" class="nav-mobile-link">
+                        <i class="fas fa-cogs"></i>
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-mobile-link">
+                        <i class="fas fa-users"></i>
+                        About Us
+                    </a>
+                </li>
+                <li>
+                    <a href="gallery.html" class="nav-mobile-link">
+                        <i class="fas fa-images"></i>
+                        Gallery
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-mobile-link">
+                        <i class="fas fa-envelope"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-mobile-cta">
+            <a href="tel:+916351802009" class="btn btn-call">
+                <i class="fas fa-phone"></i>
+                Call: 6351802009
+            </a>
+            <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services.%20Please%20help." class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         HERO SECTION - UNIQUE BENTO LAYOUT
+         ======================================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <!-- Animated Electric Lines -->
+            <div class="hero-lines">
+                <div class="hero-line"></div>
+                <div class="hero-line"></div>
+                <div class="hero-line"></div>
+                <div class="hero-line"></div>
+                <div class="hero-line"></div>
+                <div class="hero-line"></div>
+            </div>
+            <!-- Floating Gradient Orbs -->
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-grid">
+                <!-- Left Content -->
+                <div>
+                    <span class="hero-badge">
+                        <i class="fas fa-bolt"></i>
+                        Trusted Electrical Services in Vadodara
+                    </span>
+
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Professional</span><br>
+                        Electrical<br>
+                        <span class="gradient-text-orange">Services</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Safe, reliable, and affordable electrical solutions. From new wiring installations
+                        to emergency repairs and home appliance services - we've got you covered 24/7!
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-value">24/7</span>
+                            <span class="hero-stat-label">Emergency</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-value" data-counter="20" data-suffix="+">0+</span>
+                            <span class="hero-stat-label">Services</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons">
+                        <a href="tel:+916351802009" class="btn btn-accent btn-lg">
+                            <i class="fas fa-phone"></i>
+                            Call: 6351802009
+                        </a>
+                        <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services." class="btn btn-whatsapp btn-lg" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero - Unique Modern Slider -->
+                <div class="hero-visual">
+                    <div class="showcase-slider">
+                        <!-- Background Shape -->
+                        <div class="showcase-bg">
+                            <div class="bg-shape bg-shape-1"></div>
+                            <div class="bg-shape bg-shape-2"></div>
+                        </div>
+
+                        <!-- Main Card -->
+                        <div class="showcase-card">
+                            <!-- Slides -->
+                            <div class="showcase-slides">
+                                <!-- Slide 1: House Wiring -->
+                                <div class="showcase-slide active" data-index="0">
+                                    <div class="slide-image">
+                                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=900&fit=crop" alt="House Wiring">
+                                        <div class="image-overlay"></div>
+                                    </div>
+                                    <div class="slide-content">
+                                        <span class="slide-tag">Residential & Commercial</span>
+                                        <h3 class="slide-heading">House Wiring & Re-wiring</h3>
+                                        <p class="slide-text">Complete new wiring & safe re-wiring for homes, shops, offices & warehouses</p>
+                                        <div class="slide-features">
+                                            <span><i class="fas fa-check"></i> New Construction</span>
+                                            <span><i class="fas fa-check"></i> Old Building Rewiring</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2: MCB & Safety -->
+                                <div class="showcase-slide" data-index="1">
+                                    <div class="slide-image">
+                                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=900&fit=crop" alt="MCB Installation">
+                                        <div class="image-overlay"></div>
+                                    </div>
+                                    <div class="slide-content">
+                                        <span class="slide-tag">Safety First</span>
+                                        <h3 class="slide-heading">MCB & Earthing System</h3>
+                                        <p class="slide-text">Modern circuit breakers & proper earthing for complete electrical safety</p>
+                                        <div class="slide-features">
+                                            <span><i class="fas fa-check"></i> MCB Installation</span>
+                                            <span><i class="fas fa-check"></i> Earthing Setup</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3: Switches & Sockets -->
+                                <div class="showcase-slide" data-index="2">
+                                    <div class="slide-image">
+                                        <img src="https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=800&h=900&fit=crop" alt="Switches & Sockets">
+                                        <div class="image-overlay"></div>
+                                    </div>
+                                    <div class="slide-content">
+                                        <span class="slide-tag">Installation</span>
+                                        <h3 class="slide-heading">Switches & Electric Points</h3>
+                                        <p class="slide-text">New electric points, modular switches, sockets & holders installation</p>
+                                        <div class="slide-features">
+                                            <span><i class="fas fa-check"></i> Modular Switches</span>
+                                            <span><i class="fas fa-check"></i> New Points</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4: Ceiling Fan -->
+                                <div class="showcase-slide" data-index="3">
+                                    <div class="slide-image">
+                                        <img src="https://images.unsplash.com/photo-1595846415124-9c8c205e3fe8?w=800&h=900&fit=crop" alt="Ceiling Fan">
+                                        <div class="image-overlay"></div>
+                                    </div>
+                                    <div class="slide-content">
+                                        <span class="slide-tag">Fan Services</span>
+                                        <h3 class="slide-heading">Ceiling & Exhaust Fan</h3>
+                                        <p class="slide-text">Installation, repair & maintenance of ceiling fans and exhaust fans</p>
+                                        <div class="slide-features">
+                                            <span><i class="fas fa-check"></i> New Installation</span>
+                                            <span><i class="fas fa-check"></i> Repair & Service</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 5: Washing Machine -->
+                                <div class="showcase-slide" data-index="4">
+                                    <div class="slide-image">
+                                        <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=800&h=900&fit=crop" alt="Washing Machine Repair">
+                                        <div class="image-overlay"></div>
+                                    </div>
+                                    <div class="slide-content">
+                                        <span class="slide-tag">Appliance Repair</span>
+                                        <h3 class="slide-heading">Washing Machine Repair</h3>
+                                        <p class="slide-text">Expert repair for all brands - front load, top load & semi-automatic</p>
+                                        <div class="slide-features">
+                                            <span><i class="fas fa-check"></i> All Brands</span>
+                                            <span><i class="fas fa-check"></i> Quick Service</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 6: Refrigerator & AC -->
+                                <div class="showcase-slide" data-index="5">
+                                    <div class="slide-image">
+                                        <img src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=800&h=900&fit=crop" alt="Refrigerator & AC Repair">
+                                        <div class="image-overlay"></div>
+                                    </div>
+                                    <div class="slide-content">
+                                        <span class="slide-tag">Cooling Appliances</span>
+                                        <h3 class="slide-heading">Refrigerator & AC Repair</h3>
+                                        <p class="slide-text">Repair & service for refrigerators, air conditioners & coolers</p>
+                                        <div class="slide-features">
+                                            <span><i class="fas fa-check"></i> Gas Refilling</span>
+                                            <span><i class="fas fa-check"></i> Compressor Repair</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 7: Geyser & Water Heater -->
+                                <div class="showcase-slide" data-index="6">
+                                    <div class="slide-image">
+                                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=900&fit=crop" alt="Geyser Repair">
+                                        <div class="image-overlay"></div>
+                                    </div>
+                                    <div class="slide-content">
+                                        <span class="slide-tag">Water Heating</span>
+                                        <h3 class="slide-heading">Geyser & Water Heater</h3>
+                                        <p class="slide-text">Installation & repair of electric geysers and water heaters</p>
+                                        <div class="slide-features">
+                                            <span><i class="fas fa-check"></i> Installation</span>
+                                            <span><i class="fas fa-check"></i> Element Replacement</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 8: Mixer & Grinder -->
+                                <div class="showcase-slide" data-index="7">
+                                    <div class="slide-image">
+                                        <img src="https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=800&h=900&fit=crop" alt="Mixer Grinder Repair">
+                                        <div class="image-overlay"></div>
+                                    </div>
+                                    <div class="slide-content">
+                                        <span class="slide-tag">Kitchen Appliances</span>
+                                        <h3 class="slide-heading">Mixer, Grinder & Flourmill</h3>
+                                        <p class="slide-text">Repair for mixer grinders, blenders, flourmills & kitchen appliances</p>
+                                        <div class="slide-features">
+                                            <span><i class="fas fa-check"></i> Motor Repair</span>
+                                            <span><i class="fas fa-check"></i> Blade Replacement</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 9: Motor & Pump -->
+                                <div class="showcase-slide" data-index="8">
+                                    <div class="slide-image">
+                                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=900&fit=crop" alt="Motor Pump Repair">
+                                        <div class="image-overlay"></div>
+                                    </div>
+                                    <div class="slide-content">
+                                        <span class="slide-tag">Motor Services</span>
+                                        <h3 class="slide-heading">Motor & Pump Repair</h3>
+                                        <p class="slide-text">Electric motor, submersible pump & borewell motor repair services</p>
+                                        <div class="slide-features">
+                                            <span><i class="fas fa-check"></i> Submersible Pump</span>
+                                            <span><i class="fas fa-check"></i> Borewell Motor</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 10: Emergency Services -->
+                                <div class="showcase-slide" data-index="9">
+                                    <div class="slide-image">
+                                        <img src="https://images.unsplash.com/photo-1636955840493-f43a02bfa064?w=800&h=900&fit=crop" alt="Emergency Services">
+                                        <div class="image-overlay"></div>
+                                    </div>
+                                    <div class="slide-content">
+                                        <span class="slide-tag">24/7 Emergency</span>
+                                        <h3 class="slide-heading">Emergency Electrical Services</h3>
+                                        <p class="slide-text">Round the clock emergency repairs - short circuit, panel fire & faults</p>
+                                        <div class="slide-features">
+                                            <span><i class="fas fa-check"></i> Short Circuit Fix</span>
+                                            <span><i class="fas fa-check"></i> Panel Fire Repair</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Arrow Navigation -->
+                            <div class="showcase-arrows">
+                                <button class="showcase-arrow prev-arrow">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="showcase-arrow next-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Floating Elements -->
+                        <div class="floating-badge bottom-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Trusted</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- ========================================
+         SERVICES PREVIEW SECTION
+         ======================================== -->
     <section class="services section" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">What We Offer</span>
+                <span class="section-badge">
+                    <i class="fas fa-cogs"></i>
+                    What We Offer
+                </span>
                 <h2 class="section-title">Our <span class="highlight">Services</span></h2>
                 <p class="section-description">
                     Comprehensive electrical solutions for all your residential and commercial needs
                 </p>
             </div>
 
-            <div class="services-categories">
-                <!-- Category 1: Residential & Commercial -->
-                <div class="service-category">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3 class="category-title">Residential & Commercial</h3>
-                        <p class="category-desc">Complete electrical solutions for homes, hospitals, shops, offices & warehouses</p>
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card has-image fade-in stagger-1">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=250&fit=crop" alt="House Wiring" loading="lazy">
                     </div>
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-plug"></i>
-                            </div>
-                            <h4>House Wiring & Re-wiring</h4>
-                            <p>Complete new wiring and safe re-wiring for old buildings</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <h4>New Electric Points</h4>
-                            <p>Additional power points installation anywhere you need</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h4>MCB Installation</h4>
-                            <p>Modern circuit breakers for safety and protection</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-toggle-on"></i>
-                            </div>
-                            <h4>Switches Replacement</h4>
-                            <p>Upgrade to modern, safe switches and boards</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-fan"></i>
-                            </div>
-                            <h4>Ceiling Fan Service</h4>
-                            <p>Installation, repair & maintenance of ceiling fans</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-outlet"></i>
-                            </div>
-                            <h4>Sockets & Holders</h4>
-                            <p>Installation of power sockets and light holders</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <h4>Earthing System</h4>
-                            <p>Professional earthing for electrical safety</p>
-                        </div>
+                    <div class="service-content">
+                        <h3>House Wiring</h3>
+                        <p>Complete new wiring and safe re-wiring for old buildings with modern standards.</p>
+                        <a href="services.html" class="service-card-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Category 2: Home Appliance Repair -->
-                <div class="service-category">
-                    <div class="category-header">
-                        <div class="category-icon appliance">
-                            <i class="fas fa-tv"></i>
-                        </div>
-                        <h3 class="category-title">Home Appliance Repair</h3>
-                        <p class="category-desc">Expert repair services for all your home appliances</p>
+                <!-- Service Card 2 -->
+                <div class="service-card has-image fade-in stagger-2">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="MCB Installation" loading="lazy">
                     </div>
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-soap"></i>
-                            </div>
-                            <h4>Washing Machine</h4>
-                            <p>All brands washing machine repair & service</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-blender"></i>
-                            </div>
-                            <h4>Blender & Mixer</h4>
-                            <p>Blender, mixer & grinder repair services</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-wheat-awn"></i>
-                            </div>
-                            <h4>Flourmill</h4>
-                            <p>Domestic flour mill repair & maintenance</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-fire-flame-simple"></i>
-                            </div>
-                            <h4>Geyser</h4>
-                            <p>Water heater installation & repair</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-temperature-low"></i>
-                            </div>
-                            <h4>Microwave Oven</h4>
-                            <p>Microwave repair for all brands</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-snowflake"></i>
-                            </div>
-                            <h4>Refrigerator & AC</h4>
-                            <p>Fridge and air conditioner repair services</p>
-                        </div>
+                    <div class="service-content">
+                        <h3>MCB Installation</h3>
+                        <p>Modern circuit breakers for safety and protection of your electrical systems.</p>
+                        <a href="services.html" class="service-card-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Category 3: Emergency Services -->
-                <div class="service-category">
-                    <div class="category-header">
-                        <div class="category-icon emergency">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <h3 class="category-title">Emergency Electrical Solutions</h3>
-                        <p class="category-desc">Quick response for urgent electrical problems - Available 24/7</p>
+                <!-- Service Card 3 -->
+                <div class="service-card has-image fade-in stagger-3">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=250&fit=crop" alt="Appliance Repair" loading="lazy">
                     </div>
-                    <div class="services-grid">
-                        <div class="service-card emergency-card">
-                            <div class="service-icon">
-                                <i class="fas fa-cog"></i>
-                            </div>
-                            <h4>Electric Motor Repair</h4>
-                            <p>Industrial & domestic motor repairs</p>
-                        </div>
-                        <div class="service-card emergency-card">
-                            <div class="service-icon">
-                                <i class="fas fa-water"></i>
-                            </div>
-                            <h4>Submersible Pump</h4>
-                            <p>Pump repair and installation services</p>
-                        </div>
-                        <div class="service-card emergency-card">
-                            <div class="service-icon">
-                                <i class="fas fa-circle-notch"></i>
-                            </div>
-                            <h4>Borewell</h4>
-                            <p>Borewell electrical connections & repairs</p>
-                        </div>
-                        <div class="service-card emergency-card">
-                            <div class="service-icon">
-                                <i class="fas fa-project-diagram"></i>
-                            </div>
-                            <h4>Emergency Wiring</h4>
-                            <p>Quick wiring fixes and troubleshooting</p>
-                        </div>
-                        <div class="service-card emergency-card">
-                            <div class="service-icon">
-                                <i class="fas fa-fire-extinguisher"></i>
-                            </div>
-                            <h4>Panel Fire Repair</h4>
-                            <p>Common panel fire damage repair & service</p>
-                        </div>
+                    <div class="service-content">
+                        <h3>Appliance Repair</h3>
+                        <p>Expert repair for washing machines, refrigerators, AC, microwave and more.</p>
+                        <a href="services.html" class="service-card-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card has-image fade-in stagger-4">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&h=250&fit=crop" alt="Ceiling Fan Service" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Ceiling Fan Service</h3>
+                        <p>Installation, repair and maintenance of ceiling fans and exhaust fans.</p>
+                        <a href="services.html" class="service-card-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card has-image fade-in stagger-5">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=250&fit=crop" alt="Emergency Services" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Emergency Services</h3>
+                        <p>24/7 emergency electrical repairs and troubleshooting for urgent situations.</p>
+                        <a href="services.html" class="service-card-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="service-card has-image fade-in stagger-6">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=250&fit=crop" alt="Commercial Services" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Commercial Services</h3>
+                        <p>Electrical solutions for shops, offices, hospitals, and warehouses.</p>
+                        <a href="services.html" class="service-card-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="services-cta">
-                <p>Need a service not listed here?</p>
-                <a href="#contact" class="btn btn-primary">Contact Us For Custom Requirements</a>
+            <div class="text-center" style="margin-top: var(--space-10);">
+                <a href="services.html" class="btn btn-primary btn-lg">
+                    View All Services <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about section" id="about">
+    <!-- ========================================
+         ABOUT PREVIEW SECTION
+         ======================================== -->
+    <section class="about section">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="about-img-wrapper">
-                        <img src="assets/about-team.svg" alt="Trust Mee Team" class="about-img">
+            <div class="about-grid">
+                <div class="about-image fade-in-left">
+                    <div class="about-image-wrapper">
+                        <img src="assets/about-team.svg" alt="Trust Mee Team" loading="lazy">
                     </div>
-                    <div class="experience-badge">
-                        <span class="exp-number">10+</span>
-                        <span class="exp-text">Years of Experience</span>
+                    <div class="about-badge">
+                        <span class="about-badge-value">10+</span>
+                        <span class="about-badge-label">Years Experience</span>
                     </div>
                 </div>
-                <div class="about-text">
-                    <span class="section-subtitle">About Us</span>
-                    <h2 class="section-title">Your Trusted <span class="highlight">Electrical Partner</span> in Vadodara</h2>
+
+                <div class="about-content fade-in-right">
+                    <span class="section-badge">
+                        <i class="fas fa-info-circle"></i>
+                        About Us
+                    </span>
+                    <h2 class="section-title">Your Trusted <span class="highlight">Electrical Partner</span></h2>
+
                     <p class="about-description">
-                        We are a trusted electrical service provider offering reliable solutions for both residential and commercial projects. With a strong focus on <strong>safety, quality, and customer satisfaction</strong>, our skilled technicians handle everything from new installations to repairs and maintenance.
+                        We are a trusted electrical service provider offering reliable solutions for both
+                        residential and commercial projects. With a strong focus on <strong>safety, quality,
+                        and customer satisfaction</strong>, our skilled technicians handle everything from
+                        new installations to repairs and maintenance.
                     </p>
+
                     <p class="about-description">
-                        In addition to electrical services, we specialize in dependable <strong>home appliance repair</strong>, ensuring your everyday appliances work efficiently and safely. Whether it's your home, office, or commercial space, we are committed to delivering timely service, honest pricing, and long-lasting results.
+                        In addition to electrical services, we specialize in dependable <strong>home appliance
+                        repair</strong>, ensuring your everyday appliances work efficiently and safely.
                     </p>
+
                     <div class="about-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i>
                             <span>Licensed & Certified Electricians</span>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i>
                             <span>Transparent & Honest Pricing</span>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i>
                             <span>Quality Work Guaranteed</span>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i>
                             <span>On-Time Service Delivery</span>
                         </div>
                     </div>
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-handshake"></i>
-                        Get In Touch
+
+                    <a href="about.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More About Us
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-us section" id="why-us">
+    <!-- ========================================
+         WHY CHOOSE US SECTION
+         ======================================== -->
+    <section class="why-us section">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Why Choose Us</span>
+                <span class="section-badge">
+                    <i class="fas fa-star"></i>
+                    Why Choose Us
+                </span>
                 <h2 class="section-title">The <span class="highlight">TRUST MEE</span> Difference</h2>
+                <p class="section-description">
+                    We're committed to providing the best electrical services in Vadodara
+                </p>
             </div>
+
             <div class="why-us-grid">
-                <div class="why-card">
-                    <div class="why-icon">
+                <div class="why-card fade-in stagger-1">
+                    <div class="why-card-icon">
                         <i class="fas fa-shield-halved"></i>
                     </div>
-                    <h3>Safety First</h3>
-                    <p>All our work follows strict safety standards to protect your family and property</p>
+                    <h3 class="why-card-title">Safety First</h3>
+                    <p class="why-card-description">
+                        All our work follows strict safety standards to protect your family and property.
+                    </p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">
+
+                <div class="why-card fade-in stagger-2">
+                    <div class="why-card-icon">
                         <i class="fas fa-clock"></i>
                     </div>
-                    <h3>Quick Response</h3>
-                    <p>Fast and reliable service - we value your time and respond promptly</p>
+                    <h3 class="why-card-title">Quick Response</h3>
+                    <p class="why-card-description">
+                        Fast and reliable service - we value your time and respond promptly.
+                    </p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">
+
+                <div class="why-card fade-in stagger-3">
+                    <div class="why-card-icon">
                         <i class="fas fa-indian-rupee-sign"></i>
                     </div>
-                    <h3>Fair Pricing</h3>
-                    <p>No hidden charges - transparent quotes before we start any work</p>
+                    <h3 class="why-card-title">Fair Pricing</h3>
+                    <p class="why-card-description">
+                        No hidden charges - transparent quotes before we start any work.
+                    </p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">
+
+                <div class="why-card fade-in stagger-4">
+                    <div class="why-card-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <h3>Expert Team</h3>
-                    <p>Skilled and experienced technicians you can trust with your electrical needs</p>
+                    <h3 class="why-card-title">Expert Team</h3>
+                    <p class="why-card-description">
+                        Skilled and experienced technicians you can trust with your electrical needs.
+                    </p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">
+
+                <div class="why-card fade-in stagger-5">
+                    <div class="why-card-icon">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Quality Materials</h3>
-                    <p>We use only branded, high-quality electrical components</p>
+                    <h3 class="why-card-title">Quality Materials</h3>
+                    <p class="why-card-description">
+                        We use only branded, high-quality electrical components for lasting results.
+                    </p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">
+
+                <div class="why-card fade-in stagger-6">
+                    <div class="why-card-icon">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3>24/7 Support</h3>
-                    <p>Emergency electrical issues? We're just a call away, any time</p>
+                    <h3 class="why-card-title">24/7 Support</h3>
+                    <p class="why-card-description">
+                        Emergency electrical issues? We're just a call away, any time.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ========================================
+         CTA SECTION
+         ======================================== -->
+    <section class="cta-section section">
+        <div class="container">
+            <div class="cta-box fade-in">
+                <h2 class="cta-title">Need Electrical Help?</h2>
+                <p class="cta-description">
+                    Don't wait! Contact us now for a free consultation and quote.
+                    Our team is ready to help you 24/7.
+                </p>
+                <div class="cta-buttons">
+                    <a href="tel:+916351802009" class="btn btn-white btn-lg">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                    <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services.%20Please%20help." class="btn btn-whatsapp btn-lg" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <button class="btn btn-outline btn-lg" data-modal="callback" style="background: transparent; color: white; border-color: white;">
+                        <i class="fas fa-phone-volume"></i>
+                        Request Callback
+                    </button>
+                </div>
+                <p class="cta-phone">
+                    Or call us directly: <a href="tel:+916351802009">+91 6351802009</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         QUICK CONTACT SECTION
+         ======================================== -->
     <section class="contact section" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Get In Touch</span>
+                <span class="section-badge">
+                    <i class="fas fa-envelope"></i>
+                    Get In Touch
+                </span>
                 <h2 class="section-title">Contact <span class="highlight">Us</span></h2>
                 <p class="section-description">
                     Have a question or need our services? Reach out to us!
                 </p>
             </div>
 
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p>Feel free to reach out to us through any of these channels</p>
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info fade-in-left">
+                    <h3 class="contact-info-title">Contact Information</h3>
+                    <p class="contact-info-subtitle">Feel free to reach out through any channel</p>
 
-                    <div class="info-items">
-                        <div class="info-item">
-                            <div class="info-icon">
+                    <div class="contact-info-items">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div class="info-content">
+                            <div class="contact-info-content">
                                 <h4>Our Location</h4>
                                 <p>12, Khusnuma Building, Next To Lohana Samaj Hall, B/H. Dominos Pizza, Ellora Park - 390023, Vadodara</p>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-icon">
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
                                 <i class="fas fa-phone"></i>
                             </div>
-                            <div class="info-content">
+                            <div class="contact-info-content">
                                 <h4>Phone Number</h4>
                                 <a href="tel:+916351802009">+91 6351802009</a>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-icon">
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
-                            <div class="info-content">
+                            <div class="contact-info-content">
                                 <h4>Business Hours</h4>
                                 <p>Monday - Saturday: 9:00 AM - 6:30 PM</p>
-                                <p class="emergency-note"><i class="fas fa-bolt"></i> Emergency services available 24/7</p>
+                                <span class="contact-info-emergency">
+                                    <i class="fas fa-bolt"></i>
+                                    Emergency services available 24/7
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -470,33 +746,38 @@
                             <i class="fas fa-phone"></i>
                             Call Now
                         </a>
-                        <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services.%20Please%20help." class="btn btn-whatsapp" target="_blank">
+                        <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services.%20Please%20help." class="btn btn-whatsapp" target="_blank">
                             <i class="fab fa-whatsapp"></i>
                             WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="contact-form-wrapper">
-                    <h3>Send Us a Message</h3>
-                    <p>Fill out the form below and we'll get back to you shortly</p>
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper fade-in-right">
+                    <h3 class="contact-form-title">Send Us a Message</h3>
+                    <p class="contact-form-subtitle">We'll get back to you within 24 hours</p>
 
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" required>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                            <label class="form-label" for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email (optional)">
                         </div>
+
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email (optional)">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Required *</label>
-                            <select id="service" name="service" required>
+                            <label class="form-label" for="service">Service Required <span class="required">*</span></label>
+                            <select id="service" name="service" class="form-select" required>
                                 <option value="">Select a service</option>
                                 <optgroup label="Residential & Commercial">
                                     <option value="House Wiring">House Wiring & Re-wiring</option>
@@ -525,93 +806,171 @@
                                 <option value="Other">Other Services</option>
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Describe your requirement..." required></textarea>
+                            <label class="form-label" for="message">Your Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Describe your requirement..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-submit">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
+
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </div>
                     </form>
-                    <div class="form-success" id="form-success">
-                        <i class="fas fa-check-circle"></i>
-                        <h4>Thank You!</h4>
-                        <p>Your message has been sent successfully. We'll contact you soon!</p>
+
+                    <div class="form-success" id="formSuccess">
+                        <div class="form-success-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h4 class="form-success-title">Thank You!</h4>
+                        <p class="form-success-message">Your message has been sent successfully. We'll contact you soon!</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
+                <!-- Brand -->
                 <div class="footer-brand">
-                    <a href="#" class="footer-logo">
-                        <span class="logo-text">TRUST<span class="logo-highlight">MEE</span></span>
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
                     </a>
-                    <p>Your trusted electrical service provider in Vadodara. Safe, reliable, and affordable solutions for homes and businesses.</p>
+                    <p class="footer-brand-description">
+                        Your trusted electrical service provider in Vadodara. Safe, reliable, and affordable solutions for homes and businesses.
+                    </p>
                     <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/916351802009" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/918141687112" class="footer-social-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-services">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="#services">House Wiring</a></li>
-                        <li><a href="#services">Appliance Repair</a></li>
-                        <li><a href="#services">MCB Installation</a></li>
-                        <li><a href="#services">Emergency Services</a></li>
+                <!-- Services -->
+                <div>
+                    <h4 class="footer-title">Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html" class="footer-link">House Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Appliance Repair</a></li>
+                        <li><a href="services.html" class="footer-link">MCB Installation</a></li>
+                        <li><a href="services.html" class="footer-link">Emergency Services</a></li>
+                        <li><a href="services.html" class="footer-link">Commercial</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Ellora Park, Vadodara - 390023</p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+916351802009">+91 6351802009</a></p>
-                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:30 PM</p>
+                <!-- Contact -->
+                <div>
+                    <h4 class="footer-title">Contact Us</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ellora Park, Vadodara - 390023</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+916351802009">+91 6351802009</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Sat: 9:00 AM - 6:30 PM</span>
+                    </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 TRUST MEE. All Rights Reserved.</p>
+                <p class="footer-copyright">
+                    &copy; <span data-year></span> TRUST MEE. All Rights Reserved.
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Buttons -->
+    <!-- ========================================
+         FLOATING BUTTONS
+         ======================================== -->
     <div class="floating-buttons">
-        <a href="tel:+916351802009" class="float-btn float-call" aria-label="Call Us">
+        <a href="tel:+916351802009" class="float-btn float-btn-call" aria-label="Call Us">
             <i class="fas fa-phone"></i>
-            <span class="float-tooltip">Call Now</span>
+            <span class="float-btn-tooltip">Call Now</span>
         </a>
-        <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services.%20Please%20help." class="float-btn float-whatsapp" target="_blank" aria-label="WhatsApp">
+        <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services.%20Please%20help." class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
-            <span class="float-tooltip">WhatsApp</span>
+            <span class="float-btn-tooltip">WhatsApp</span>
         </a>
     </div>
 
-    <!-- Back to Top Button -->
-    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <!-- ========================================
+         CALLBACK MODAL
+         ======================================== -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal" id="callbackModal">
+        <button class="modal-close" id="modalClose" aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-header">
+            <div class="modal-icon">
+                <i class="fas fa-phone-volume"></i>
+            </div>
+            <h3 class="modal-title">Request a Callback</h3>
+            <p class="modal-subtitle">Enter your details and we'll call you back shortly</p>
+        </div>
+        <form id="callbackForm">
+            <div class="form-group">
+                <label class="form-label" for="callbackName">Your Name <span class="required">*</span></label>
+                <input type="text" id="callbackName" name="name" class="form-input" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="callbackPhone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="callbackPhone" name="phone" class="form-input" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="callbackService">Service Required</label>
+                <select id="callbackService" name="service" class="form-select">
+                    <option value="">Select a service (optional)</option>
+                    <option value="House Wiring">House Wiring</option>
+                    <option value="Appliance Repair">Appliance Repair</option>
+                    <option value="MCB Installation">MCB Installation</option>
+                    <option value="Emergency Service">Emergency Service</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-accent btn-lg" style="width: 100%;">
+                <i class="fas fa-phone"></i>
+                Request Callback
+            </button>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
 </body>
 </html>
