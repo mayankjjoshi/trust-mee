@@ -3,246 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About TRUST MEE - Learn about our 10+ years of experience providing trusted electrical services in Vadodara. Meet our expert team.">
+    <meta name="description" content="About TRUST MEE - Your trusted electrical service provider in Vadodara. Safe, reliable, and affordable electrical solutions.">
     <meta name="keywords" content="about Trust Mee, electrician Vadodara, electrical company, trusted electrician">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#00B4E8">
 
     <title>About Us | TRUST MEE - Electrical Services Vadodara</title>
 
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="logo/favicon.svg">
     <link rel="icon" type="image/png" href="logo/png.png">
+    <link rel="apple-touch-icon" href="logo/jpg-01.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* About Page Styles */
+        .about-page {
+            padding-top: var(--header-height);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: var(--space-10) 0;
+            text-align: center;
+            background: var(--gray-50);
+        }
+        .page-hero h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: var(--space-2);
+        }
+        .page-hero p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: var(--space-10) 0;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .about-image {
+            text-align: center;
+        }
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+        }
+
+        .about-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: var(--space-4);
+        }
+        .about-content h2 span {
+            color: var(--primary-blue);
+        }
+        .about-content p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: var(--space-4);
+        }
+
+        /* Features List */
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3);
+            margin-bottom: var(--space-6);
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+        .feature-item i {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+        }
+        .feature-item span {
+            font-size: 0.85rem;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: var(--space-10) 0;
+            background: var(--gray-50);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+            padding: var(--space-6);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .stat-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: var(--shadow-md);
+        }
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-blue-light);
+            color: var(--primary-blue);
+            border-radius: var(--radius-md);
+            font-size: 1.25rem;
+            margin: 0 auto var(--space-3);
+        }
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: var(--space-1);
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: var(--space-10) 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: var(--space-2);
+        }
+        .section-header h2 span {
+            color: var(--primary-blue);
+        }
+        .section-header p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+        }
+        @media (min-width: 768px) {
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .value-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+            padding: var(--space-5);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .value-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: var(--shadow-md);
+        }
+        .value-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-blue-light);
+            color: var(--primary-blue);
+            border-radius: var(--radius-md);
+            font-size: 1.25rem;
+            margin: 0 auto var(--space-3);
+        }
+        .value-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: var(--space-2);
+        }
+        .value-card p {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+    </style>
 </head>
 <body>
-    <!-- Electric Background Animation -->
-    <div class="electric-bg"></div>
-
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">
                 <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
             </a>
-            <nav class="nav-desktop">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="about.html" class="nav-link active">About Us</a></li>
-                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-cta-mobile">
-                <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-            </div>
+            <a href="tel:+916351802009" class="header-contact">
+                <i class="fas fa-phone"></i>
+                <span>6351802009</span>
+            </a>
         </div>
     </header>
 
-    <!-- Mobile Navigation -->
-    <div class="nav-mobile-backdrop" id="navBackdrop"></div>
-    <nav class="nav-mobile" id="navMobile">
-        <div class="nav-mobile-header">
-            <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
-            </a>
-            <button class="nav-mobile-close" id="navClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="nav-mobile-body">
-            <ul class="nav-mobile-list">
-                <li><a href="index.html" class="nav-mobile-link"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="services.html" class="nav-mobile-link"><i class="fas fa-cogs"></i> Services</a></li>
-                <li><a href="about.html" class="nav-mobile-link active"><i class="fas fa-users"></i> About Us</a></li>
-                <li><a href="gallery.html" class="nav-mobile-link"><i class="fas fa-images"></i> Gallery</a></li>
-                <li><a href="contact.html" class="nav-mobile-link"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-        </div>
-        <div class="nav-mobile-cta">
-            <a href="tel:+916351802009" class="btn btn-call"><i class="fas fa-phone"></i> Call: 6351802009</a>
-            <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services." class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-header-title">About Us</h1>
-            <div class="page-header-breadcrumb">
-                <a href="index.html">Home</a>
-                <i class="fas fa-chevron-right"></i>
-                <span>About Us</span>
+    <main class="about-page">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>About Us</h1>
+                <p>Your trusted electrical service partner in Vadodara</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about section">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image fade-in-left">
-                    <div class="about-image-wrapper">
-                        <img src="assets/about-team.svg" alt="Trust Mee Team" loading="lazy">
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="assets/about-team.svg" alt="Trust Mee Team">
                     </div>
-                    <div class="about-badge">
-                        <span class="about-badge-value">10+</span>
-                        <span class="about-badge-label">Years Experience</span>
+                    <div class="about-content">
+                        <h2>Your Trusted <span>Electrical Partner</span></h2>
+                        <p>
+                            <strong>TRUST MEE</strong> was founded with a simple mission: to provide safe, reliable, and affordable electrical services to the people of Vadodara. We have grown from a small local service provider to one of the most trusted names in electrical solutions.
+                        </p>
+                        <p>
+                            We offer reliable solutions for both residential and commercial projects. With a strong focus on safety, quality, and customer satisfaction, our skilled technicians handle everything from new installations to repairs and maintenance.
+                        </p>
+                        <p>
+                            In addition to electrical services, we specialize in home appliance repair, ensuring your everyday appliances work efficiently and safely.
+                        </p>
+
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Certified Electricians</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Honest Pricing</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Quality Guaranteed</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>On-Time Service</span>
+                            </div>
+                        </div>
+
+                        <a href="contact.html" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Contact Us
+                        </a>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="about-content fade-in-right">
-                    <span class="section-badge"><i class="fas fa-info-circle"></i> Our Story</span>
-                    <h2 class="section-title">Your Trusted <span class="highlight">Electrical Partner</span> in Vadodara</h2>
-
-                    <p class="about-description">
-                        <strong>TRUST MEE</strong> was founded with a simple mission: to provide safe, reliable, and affordable
-                        electrical services to the people of Vadodara. Over the past decade, we have grown from a small
-                        local service provider to one of the most trusted names in electrical solutions.
-                    </p>
-
-                    <p class="about-description">
-                        We are a trusted electrical service provider offering reliable solutions for both residential and
-                        commercial projects. With a strong focus on <strong>safety, quality, and customer satisfaction</strong>,
-                        our skilled technicians handle everything from new installations to repairs and maintenance.
-                    </p>
-
-                    <p class="about-description">
-                        In addition to electrical services, we specialize in dependable <strong>home appliance repair</strong>,
-                        ensuring your everyday appliances work efficiently and safely. Whether it's your home, office, or
-                        commercial space, we are committed to delivering timely service, honest pricing, and long-lasting results.
-                    </p>
-
-                    <div class="about-features">
-                        <div class="about-feature">
-                            <i class="fas fa-check"></i>
-                            <span>Licensed & Certified Electricians</span>
-                        </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check"></i>
-                            <span>Transparent & Honest Pricing</span>
-                        </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check"></i>
-                            <span>Quality Work Guaranteed</span>
-                        </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check"></i>
-                            <span>On-Time Service Delivery</span>
-                        </div>
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Services</div>
                     </div>
-
-                    <a href="contact.html" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Contact Us Today
-                    </a>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-star"></i></div>
+                        <div class="stat-number">4.9/5</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stats Section -->
-    <section class="section" style="background: var(--bg-secondary);">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge"><i class="fas fa-chart-line"></i> Our Achievements</span>
-                <h2 class="section-title">Numbers That <span class="highlight">Speak</span></h2>
-            </div>
+        <!-- Values Section -->
+        <section class="values-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What We <span>Stand For</span></h2>
+                    <p>Our core values that guide everything we do</p>
+                </div>
 
-            <div class="why-us-grid">
-                <div class="why-card fade-in stagger-1">
-                    <div class="why-card-icon"><i class="fas fa-calendar-check"></i></div>
-                    <h3 class="why-card-title"><span data-counter="10" data-suffix="+">0+</span></h3>
-                    <p class="why-card-description">Years of Experience</p>
-                </div>
-                <div class="why-card fade-in stagger-2">
-                    <div class="why-card-icon"><i class="fas fa-users"></i></div>
-                    <h3 class="why-card-title"><span data-counter="5000" data-suffix="+">0+</span></h3>
-                    <p class="why-card-description">Happy Customers</p>
-                </div>
-                <div class="why-card fade-in stagger-3">
-                    <div class="why-card-icon"><i class="fas fa-project-diagram"></i></div>
-                    <h3 class="why-card-title"><span data-counter="8000" data-suffix="+">0+</span></h3>
-                    <p class="why-card-description">Projects Completed</p>
-                </div>
-                <div class="why-card fade-in stagger-4">
-                    <div class="why-card-icon"><i class="fas fa-cogs"></i></div>
-                    <h3 class="why-card-title"><span data-counter="20" data-suffix="+">0+</span></h3>
-                    <p class="why-card-description">Services Offered</p>
-                </div>
-                <div class="why-card fade-in stagger-5">
-                    <div class="why-card-icon"><i class="fas fa-bolt"></i></div>
-                    <h3 class="why-card-title">24/7</h3>
-                    <p class="why-card-description">Emergency Support</p>
-                </div>
-                <div class="why-card fade-in stagger-6">
-                    <div class="why-card-icon"><i class="fas fa-star"></i></div>
-                    <h3 class="why-card-title">4.9/5</h3>
-                    <p class="why-card-description">Customer Rating</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Values -->
-    <section class="why-us section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge"><i class="fas fa-heart"></i> Our Values</span>
-                <h2 class="section-title">What We <span class="highlight">Stand For</span></h2>
-            </div>
-
-            <div class="why-us-grid">
-                <div class="why-card fade-in stagger-1">
-                    <div class="why-card-icon"><i class="fas fa-shield-halved"></i></div>
-                    <h3 class="why-card-title">Safety First</h3>
-                    <p class="why-card-description">Your safety is our top priority. We follow all safety protocols and use quality materials.</p>
-                </div>
-                <div class="why-card fade-in stagger-2">
-                    <div class="why-card-icon"><i class="fas fa-handshake"></i></div>
-                    <h3 class="why-card-title">Integrity</h3>
-                    <p class="why-card-description">Honest pricing, transparent communication, and ethical business practices.</p>
-                </div>
-                <div class="why-card fade-in stagger-3">
-                    <div class="why-card-icon"><i class="fas fa-medal"></i></div>
-                    <h3 class="why-card-title">Excellence</h3>
-                    <p class="why-card-description">We strive for excellence in every project, big or small.</p>
-                </div>
-                <div class="why-card fade-in stagger-4">
-                    <div class="why-card-icon"><i class="fas fa-users"></i></div>
-                    <h3 class="why-card-title">Customer Focus</h3>
-                    <p class="why-card-description">Your satisfaction drives everything we do. We listen and deliver.</p>
-                </div>
-                <div class="why-card fade-in stagger-5">
-                    <div class="why-card-icon"><i class="fas fa-clock"></i></div>
-                    <h3 class="why-card-title">Reliability</h3>
-                    <p class="why-card-description">On-time service delivery you can count on, every single time.</p>
-                </div>
-                <div class="why-card fade-in stagger-6">
-                    <div class="why-card-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3 class="why-card-title">Innovation</h3>
-                    <p class="why-card-description">Keeping up with latest techniques and technologies in electrical services.</p>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-shield-halved"></i></div>
+                        <h3>Safety First</h3>
+                        <p>Your safety is our top priority. We follow all safety protocols.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Integrity</h3>
+                        <p>Honest pricing and transparent communication always.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-medal"></i></div>
+                        <h3>Excellence</h3>
+                        <p>We strive for excellence in every project, big or small.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-heart"></i></div>
+                        <h3>Customer Focus</h3>
+                        <p>Your satisfaction drives everything we do.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-clock"></i></div>
+                        <h3>Reliability</h3>
+                        <p>On-time service delivery you can count on.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Innovation</h3>
+                        <p>Using latest techniques and technologies.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA -->
-    <section class="cta-section section">
-        <div class="container">
-            <div class="cta-box fade-in">
-                <h2 class="cta-title">Ready to Work With Us?</h2>
-                <p class="cta-description">Experience the TRUST MEE difference. Contact us today for reliable electrical services.</p>
-                <div class="cta-buttons">
-                    <a href="tel:+916351802009" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
-                    <a href="contact.html" class="btn btn-outline btn-lg" style="background: transparent; color: white; border-color: white;"><i class="fas fa-paper-plane"></i> Get Quote</a>
+        <!-- CTA Section -->
+        <section class="cta-section section">
+            <div class="container">
+                <div class="cta-box">
+                    <h2 class="cta-title">Need Electrical Help?</h2>
+                    <p class="cta-description">
+                        Don't wait! Contact us now for a free consultation and quote.
+                        Our team is ready to help you.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="tel:+916351802009" class="btn btn-white btn-lg">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                        <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." class="btn btn-whatsapp btn-lg" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                    <p class="cta-phone">
+                        Or call us directly: <a href="tel:+916351802009">+91 6351802009</a>
+                    </p>
                 </div>
-                <p class="cta-phone">Call: <a href="tel:+916351802009">+91 6351802009</a></p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -255,15 +400,9 @@
                         Your trusted electrical service provider in Vadodara. Safe, reliable, and affordable solutions for homes and businesses.
                     </p>
                     <div class="footer-social">
-                        <a href="#" class="footer-social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="footer-social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/918141687112" class="footer-social-link" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/916351802009" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -286,7 +425,6 @@
                         <li><a href="services.html" class="footer-link">House Wiring</a></li>
                         <li><a href="services.html" class="footer-link">Appliance Repair</a></li>
                         <li><a href="services.html" class="footer-link">MCB Installation</a></li>
-                        <li><a href="services.html" class="footer-link">Emergency Services</a></li>
                         <li><a href="services.html" class="footer-link">Commercial</a></li>
                     </ul>
                 </div>
@@ -301,6 +439,10 @@
                     <div class="footer-contact-item">
                         <i class="fas fa-phone"></i>
                         <a href="tel:+916351802009">+91 6351802009</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@trust-mee.com">info@trust-mee.com</a>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-clock"></i>
@@ -320,7 +462,7 @@
     <!-- Floating Buttons -->
     <div class="floating-buttons">
         <a href="tel:+916351802009" class="float-btn float-btn-call" aria-label="Call Us"><i class="fas fa-phone"></i><span class="float-btn-tooltip">Call Now</span></a>
-        <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services." class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i><span class="float-btn-tooltip">WhatsApp</span></a>
+        <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i><span class="float-btn-tooltip">WhatsApp</span></a>
     </div>
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 

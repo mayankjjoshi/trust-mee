@@ -3,163 +3,489 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact TRUST MEE for electrical services in Vadodara. Call us at +91 6351802009 or visit our office at Ellora Park. 24/7 emergency services available.">
+    <meta name="description" content="Contact TRUST MEE for electrical services in Vadodara. Call us at +91 6351802009 or visit our office at Ellora Park.">
     <meta name="keywords" content="contact electrician Vadodara, Trust Mee contact, electrical service phone number">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#00B4E8">
 
     <title>Contact Us | TRUST MEE - Electrical Services Vadodara</title>
 
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="logo/favicon.svg">
     <link rel="icon" type="image/png" href="logo/png.png">
+    <link rel="apple-touch-icon" href="logo/jpg-01.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Page Hero */
+        .page-hero {
+            background: var(--gray-50);
+            padding: 60px 0;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        .page-hero p {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+        }
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        /* Contact Info */
+        .contact-info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid var(--gray-200);
+        }
+        .contact-info-card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        .contact-info-card > p {
+            color: var(--gray-600);
+            margin-bottom: 32px;
+        }
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gray-100);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .contact-item-icon i {
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+        }
+        .contact-item-icon.whatsapp {
+            background: rgba(37, 211, 102, 0.1);
+        }
+        .contact-item-icon.whatsapp i {
+            color: #25d366;
+        }
+        .contact-item-content h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+        .contact-item-content p,
+        .contact-item-content a {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-decoration: none;
+        }
+        .contact-item-content a:hover {
+            color: var(--primary-blue);
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+        .contact-buttons .btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .btn-call {
+            background: var(--primary-blue);
+            color: white;
+        }
+        .btn-call:hover {
+            background: #0095c4;
+        }
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+        }
+
+        /* Contact Form */
+        .contact-form-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid var(--gray-200);
+        }
+        .contact-form-card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        .contact-form-card > p {
+            color: var(--gray-600);
+            margin-bottom: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 8px;
+        }
+        .form-group label .required {
+            color: #ef4444;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--gray-300);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            color: var(--gray-900);
+            background: white;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 180, 232, 0.1);
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray-400);
+        }
+        .form-group select {
+            cursor: pointer;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            margin-top: 8px;
+        }
+        .form-submit .btn {
+            width: 100%;
+            padding: 14px 24px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.2s ease;
+        }
+        .form-submit .btn:hover {
+            background: #0095c4;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .form-success.show {
+            display: block;
+        }
+        .form-success-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .form-success-icon i {
+            font-size: 1.75rem;
+            color: #22c55e;
+        }
+        .form-success h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        .form-success p {
+            color: var(--gray-600);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0 0 80px;
+        }
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+        }
+        .map-container iframe {
+            display: block;
+        }
+
+        /* Quick Contact Cards */
+        .quick-contact {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        .quick-contact-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .quick-contact-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        .quick-contact-header p {
+            color: var(--gray-600);
+        }
+        .quick-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .quick-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .quick-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .quick-card-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(0, 180, 232, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .quick-card-icon i {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        .quick-card-icon.whatsapp {
+            background: rgba(37, 211, 102, 0.1);
+        }
+        .quick-card-icon.whatsapp i {
+            color: #25d366;
+        }
+        .quick-card-icon.location {
+            background: rgba(255, 107, 53, 0.1);
+        }
+        .quick-card-icon.location i {
+            color: #ff6b35;
+        }
+        .quick-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        .quick-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .quick-contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Electric Background Animation -->
-    <div class="electric-bg"></div>
-
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">
                 <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
             </a>
-            <nav class="nav-desktop">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-cta-mobile">
-                <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-            </div>
+            <a href="tel:+916351802009" class="header-contact">
+                <i class="fas fa-phone"></i>
+                <span>6351802009</span>
+            </a>
         </div>
     </header>
 
-    <!-- Mobile Navigation -->
-    <div class="nav-mobile-backdrop" id="navBackdrop"></div>
-    <nav class="nav-mobile" id="navMobile">
-        <div class="nav-mobile-header">
-            <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
-            </a>
-            <button class="nav-mobile-close" id="navClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="nav-mobile-body">
-            <ul class="nav-mobile-list">
-                <li><a href="index.html" class="nav-mobile-link"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="services.html" class="nav-mobile-link"><i class="fas fa-cogs"></i> Services</a></li>
-                <li><a href="about.html" class="nav-mobile-link"><i class="fas fa-users"></i> About Us</a></li>
-                <li><a href="gallery.html" class="nav-mobile-link"><i class="fas fa-images"></i> Gallery</a></li>
-                <li><a href="contact.html" class="nav-mobile-link active"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-        </div>
-        <div class="nav-mobile-cta">
-            <a href="tel:+916351802009" class="btn btn-call"><i class="fas fa-phone"></i> Call: 6351802009</a>
-            <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services." class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Page Hero -->
+    <section class="page-hero">
         <div class="container">
-            <h1 class="page-header-title">Contact Us</h1>
-            <div class="page-header-breadcrumb">
-                <a href="index.html">Home</a>
-                <i class="fas fa-chevron-right"></i>
-                <span>Contact</span>
-            </div>
+            <h1>Contact Us</h1>
+            <p>Get in touch with us for all your electrical needs</p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact section">
+    <section class="contact-section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge"><i class="fas fa-envelope"></i> Get In Touch</span>
-                <h2 class="section-title">We'd Love to <span class="highlight">Hear From You</span></h2>
-                <p class="section-description">Have a question or need our services? Reach out through any channel below.</p>
-            </div>
-
-            <div class="contact-grid">
+            <div class="contact-wrapper">
                 <!-- Contact Info -->
-                <div class="contact-info fade-in-left">
-                    <h3 class="contact-info-title">Contact Information</h3>
-                    <p class="contact-info-subtitle">Feel free to reach out through any channel</p>
+                <div class="contact-info-card">
+                    <h2>Contact Information</h2>
+                    <p>Feel free to reach out through any channel</p>
 
-                    <div class="contact-info-items">
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="contact-info-content">
-                                <h4>Our Location</h4>
-                                <p>12, Khusnuma Building, Next To Lohana Samaj Hall, B/H. Dominos Pizza, Ellora Park - 390023, Vadodara, Gujarat, India</p>
-                            </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
-                            <div class="contact-info-content">
-                                <h4>Phone Number</h4>
-                                <a href="tel:+916351802009">+91 6351802009</a>
-                            </div>
+                        <div class="contact-item-content">
+                            <h4>Our Location</h4>
+                            <p>12, Khusnuma Building, Next To Lohana Samaj Hall, B/H. Dominos Pizza, Ellora Park - 390023, Vadodara, Gujarat, India</p>
                         </div>
+                    </div>
 
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
-                            <div class="contact-info-content">
-                                <h4>Business Hours</h4>
-                                <p>Monday - Saturday: 9:00 AM - 6:30 PM</p>
-                                <span class="contact-info-emergency"><i class="fas fa-bolt"></i> Emergency services available 24/7</span>
-                            </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-phone"></i>
                         </div>
+                        <div class="contact-item-content">
+                            <h4>Phone Number</h4>
+                            <a href="tel:+916351802009">+91 6351802009</a>
+                        </div>
+                    </div>
 
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
-                            <div class="contact-info-content">
-                                <h4>WhatsApp</h4>
-                                <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services." target="_blank">+91 6351802009</a>
-                            </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." target="_blank">+91 6351802009</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h4>Email Address</h4>
+                            <a href="mailto:info@trust-mee.com">info@trust-mee.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 9:00 AM - 6:30 PM</p>
                         </div>
                     </div>
 
                     <div class="contact-buttons">
                         <a href="tel:+916351802009" class="btn btn-call"><i class="fas fa-phone"></i> Call Now</a>
-                        <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services." class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="contact-form-wrapper fade-in-right">
-                    <h3 class="contact-form-title">Send Us a Message</h3>
-                    <p class="contact-form-subtitle">We'll get back to you within 24 hours</p>
+                <div class="contact-form-card">
+                    <h2>Send Us a Message</h2>
+                    <p>We'll get back to you within 24 hours</p>
 
                     <form class="contact-form" id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
-                                <label class="form-label" for="name">Your Name <span class="required">*</span></label>
-                                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                                <label for="name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
-                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" required>
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="email">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email (optional)">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email (optional)">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="service">Service Required <span class="required">*</span></label>
-                            <select id="service" name="service" class="form-select" required>
+                            <label for="service">Service Required <span class="required">*</span></label>
+                            <select id="service" name="service" required>
                                 <option value="">Select a service</option>
                                 <optgroup label="Residential & Commercial">
                                     <option value="House Wiring">House Wiring & Re-wiring</option>
@@ -178,29 +504,28 @@
                                     <option value="Microwave">Microwave Repair</option>
                                     <option value="Refrigerator/AC">Refrigerator/AC Repair</option>
                                 </optgroup>
-                                <optgroup label="Emergency Services">
+                                <optgroup label="Other Services">
                                     <option value="Motor Repair">Electric Motor Repair</option>
                                     <option value="Pump Repair">Submersible Pump Repair</option>
                                     <option value="Borewell">Borewell Services</option>
-                                    <option value="Emergency Wiring">Emergency Wiring</option>
-                                    <option value="Panel Repair">Panel Fire Repair</option>
+                                    <option value="Panel Repair">Panel Repair</option>
                                 </optgroup>
                                 <option value="Other">Other Services</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="address">Your Address</label>
-                            <input type="text" id="address" name="address" class="form-input" placeholder="Enter your address for service">
+                            <label for="address">Your Address</label>
+                            <input type="text" id="address" name="address" placeholder="Enter your address for service">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="message">Your Message <span class="required">*</span></label>
-                            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Describe your requirement in detail..." required></textarea>
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Describe your requirement (optional)..."></textarea>
                         </div>
 
                         <div class="form-submit">
-                            <button type="submit" class="btn btn-primary btn-lg">
+                            <button type="submit" class="btn">
                                 <i class="fas fa-paper-plane"></i> Send Message
                             </button>
                         </div>
@@ -208,8 +533,8 @@
 
                     <div class="form-success" id="formSuccess">
                         <div class="form-success-icon"><i class="fas fa-check"></i></div>
-                        <h4 class="form-success-title">Thank You!</h4>
-                        <p class="form-success-message">Your message has been sent successfully. We'll contact you soon!</p>
+                        <h4>Thank You!</h4>
+                        <p>Your message has been sent successfully. We'll contact you soon!</p>
                     </div>
                 </div>
             </div>
@@ -217,9 +542,9 @@
     </section>
 
     <!-- Map Section -->
-    <section class="section" style="background: var(--bg-secondary);">
+    <section class="map-section">
         <div class="container">
-            <div style="border-radius: 24px; overflow: hidden; border: 1px solid var(--border-color);">
+            <div class="map-container">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.169!2d73.1815!3d22.3119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8b0!2sEllora%20Park%2C%20Vadodara%2C%20Gujarat%20390023!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
                     width="100%"
@@ -234,29 +559,35 @@
         </div>
     </section>
 
-    <!-- Quick Contact Cards -->
-    <section class="section">
+    <!-- Quick Contact -->
+    <section class="quick-contact">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge"><i class="fas fa-bolt"></i> Quick Contact</span>
-                <h2 class="section-title">Reach Us <span class="highlight">Instantly</span></h2>
+            <div class="quick-contact-header">
+                <h2>Reach Us Instantly</h2>
+                <p>Choose your preferred way to connect</p>
             </div>
 
-            <div class="services-grid">
-                <a href="tel:+916351802009" class="service-card fade-in stagger-1" style="text-align: center; cursor: pointer;">
-                    <div class="service-icon"><i class="fas fa-phone"></i></div>
+            <div class="quick-contact-grid">
+                <a href="tel:+916351802009" class="quick-card">
+                    <div class="quick-card-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
                     <h3>Call Us</h3>
-                    <p>+91 6351802009<br>Available 24/7 for emergencies</p>
+                    <p>+91 6351802009<br>Mon-Sat: 9 AM - 6:30 PM</p>
                 </a>
 
-                <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services." target="_blank" class="service-card fade-in stagger-2" style="text-align: center; cursor: pointer;">
-                    <div class="service-icon" style="background: rgba(37, 211, 102, 0.1); color: #25d366;"><i class="fab fa-whatsapp"></i></div>
+                <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." target="_blank" class="quick-card">
+                    <div class="quick-card-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
                     <h3>WhatsApp</h3>
                     <p>Quick response on WhatsApp<br>Send photos of issues</p>
                 </a>
 
-                <div class="service-card fade-in stagger-3" style="text-align: center;">
-                    <div class="service-icon" style="background: rgba(255, 107, 53, 0.1); color: var(--neon-orange);"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="quick-card">
+                    <div class="quick-card-icon location">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
                     <h3>Visit Us</h3>
                     <p>Ellora Park, Vadodara<br>Mon-Sat: 9 AM - 6:30 PM</p>
                 </div>
@@ -264,6 +595,33 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="container">
+            <div class="cta-box">
+                <h2 class="cta-title">Need Electrical Help?</h2>
+                <p class="cta-description">
+                    Don't wait! Contact us now for a free consultation and quote.
+                    Our team is ready to help you.
+                </p>
+                <div class="cta-buttons">
+                    <a href="tel:+916351802009" class="btn btn-white btn-lg">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                    <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." class="btn btn-whatsapp btn-lg" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                </div>
+                <p class="cta-phone">
+                    Or call us directly: <a href="tel:+916351802009">+91 6351802009</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -282,7 +640,7 @@
                         <a href="#" class="footer-social-link" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/918141687112" class="footer-social-link" aria-label="WhatsApp">
+                        <a href="https://wa.me/916351802009" class="footer-social-link" aria-label="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -307,7 +665,6 @@
                         <li><a href="services.html" class="footer-link">House Wiring</a></li>
                         <li><a href="services.html" class="footer-link">Appliance Repair</a></li>
                         <li><a href="services.html" class="footer-link">MCB Installation</a></li>
-                        <li><a href="services.html" class="footer-link">Emergency Services</a></li>
                         <li><a href="services.html" class="footer-link">Commercial</a></li>
                     </ul>
                 </div>
@@ -322,6 +679,10 @@
                     <div class="footer-contact-item">
                         <i class="fas fa-phone"></i>
                         <a href="tel:+916351802009">+91 6351802009</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@trust-mee.com">info@trust-mee.com</a>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-clock"></i>
@@ -341,32 +702,34 @@
     <!-- Floating Buttons -->
     <div class="floating-buttons">
         <a href="tel:+916351802009" class="float-btn float-btn-call" aria-label="Call Us"><i class="fas fa-phone"></i><span class="float-btn-tooltip">Call Now</span></a>
-        <a href="https://wa.me/918141687112?text=Hi!%20I%20need%20electrical%20services." class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i><span class="float-btn-tooltip">WhatsApp</span></a>
+        <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i><span class="float-btn-tooltip">WhatsApp</span></a>
     </div>
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 
-    <!-- Callback Modal -->
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-    <div class="modal" id="callbackModal">
-        <button class="modal-close" id="modalClose" aria-label="Close"><i class="fas fa-times"></i></button>
-        <div class="modal-header">
-            <div class="modal-icon"><i class="fas fa-phone-volume"></i></div>
-            <h3 class="modal-title">Request a Callback</h3>
-            <p class="modal-subtitle">Enter your details and we'll call you back</p>
-        </div>
-        <form id="callbackForm">
-            <div class="form-group">
-                <label class="form-label" for="callbackName">Your Name <span class="required">*</span></label>
-                <input type="text" id="callbackName" name="name" class="form-input" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="callbackPhone">Phone Number <span class="required">*</span></label>
-                <input type="tel" id="callbackPhone" name="phone" class="form-input" placeholder="Enter your phone number" required>
-            </div>
-            <button type="submit" class="btn btn-accent btn-lg" style="width: 100%;"><i class="fas fa-phone"></i> Request Callback</button>
-        </form>
-    </div>
-
     <script src="js/app.js"></script>
+    <script>
+        // Form submission - redirect to WhatsApp
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const address = document.getElementById('address').value;
+            const message = document.getElementById('message').value;
+
+            let whatsappMessage = `Hi! I need electrical services.\n\n`;
+            whatsappMessage += `Name: ${name}\n`;
+            whatsappMessage += `Phone: ${phone}\n`;
+            if (email) whatsappMessage += `Email: ${email}\n`;
+            whatsappMessage += `Service: ${service}\n`;
+            if (address) whatsappMessage += `Address: ${address}\n`;
+            if (message) whatsappMessage += `Message: ${message}`;
+
+            const whatsappUrl = `https://wa.me/916351802009?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
 </body>
 </html>

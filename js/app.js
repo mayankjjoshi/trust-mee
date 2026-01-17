@@ -453,53 +453,33 @@ const Form = {
         e.preventDefault();
         const form = e.target;
         const submitBtn = form.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerHTML;
 
         // Validate form
         if (!this.validateForm(form)) {
             return;
         }
 
-        // Show loading state
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner"></span> Sending...';
+        // Collect form data
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
 
-        try {
-            // Collect form data
-            const formData = new FormData(form);
-            const data = {
-                id: Utils.generateId(),
-                type: formType,
-                timestamp: new Date().toISOString(),
-                ...Object.fromEntries(formData)
-            };
+        // Build WhatsApp message
+        let message = `Hi! I need electrical services.\n\n`;
+        if (data.name) message += `Name: ${data.name}\n`;
+        if (data.phone) message += `Phone: ${data.phone}\n`;
+        if (data.email) message += `Email: ${data.email}\n`;
+        if (data.service) message += `Service: ${data.service}\n`;
+        if (data.address) message += `Address: ${data.address}\n`;
+        if (data.message) message += `Message: ${data.message}\n`;
 
-            // Store in localStorage as backup
-            this.storeLocally(data);
+        // Open WhatsApp with the message
+        const whatsappUrl = `https://wa.me/918141687112?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
 
-            // Simulate API delay
-            await new Promise(resolve => setTimeout(resolve, 1500));
-
-            // Show success
-            this.showSuccess(form, formType);
-
-            // Reset form
-            form.reset();
-
-            // Close modal if callback form
-            if (formType === 'callback') {
-                setTimeout(() => Modal.close(), 2000);
-            }
-
-            Utils.showToast('Message sent successfully! We\'ll contact you soon.', 'success');
-
-        } catch (error) {
-            console.error('Form submission error:', error);
-            Utils.showToast('Something went wrong. Please try again.', 'error');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnText;
-        }
+        // Show success
+        this.showSuccess(form, formType);
+        form.reset();
+        Utils.showToast('Opening WhatsApp...', 'success');
     },
 
     validateForm(form) {
@@ -903,6 +883,289 @@ const HeroSlider = {
 };
 
 // ========================================
+// URBAN COMPANY STYLE BANNER SLIDER
+// ========================================
+const UCBannerSlider = {
+    currentSlide: 0,
+    slides: null,
+    dots: null,
+    autoSlideInterval: null,
+    autoSlideDelay: 5000, // 5 seconds
+
+    init() {
+        this.slides = document.querySelectorAll('.uc-banner-slide');
+        this.dots = document.querySelectorAll('.uc-banner-dot');
+
+        if (!this.slides.length) return;
+
+        // Dot click events
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                this.goToSlide(index);
+                this.restartAutoSlide();
+            });
+        });
+
+        // Start auto-slide
+        this.startAutoSlide();
+
+        // Pause on hover
+        const banner = document.querySelector('.uc-hero-banner');
+        if (banner) {
+            banner.addEventListener('mouseenter', () => this.stopAutoSlide());
+            banner.addEventListener('mouseleave', () => this.startAutoSlide());
+        }
+
+        // Touch/Swipe support
+        this.initTouchEvents();
+    },
+
+    goToSlide(index) {
+        // Remove active from current
+        if (this.slides[this.currentSlide]) {
+            this.slides[this.currentSlide].classList.remove('active');
+        }
+        if (this.dots[this.currentSlide]) {
+            this.dots[this.currentSlide].classList.remove('active');
+        }
+
+        // Update index
+        this.currentSlide = index;
+        if (this.currentSlide >= this.slides.length) this.currentSlide = 0;
+        if (this.currentSlide < 0) this.currentSlide = this.slides.length - 1;
+
+        // Add active to new
+        if (this.slides[this.currentSlide]) {
+            this.slides[this.currentSlide].classList.add('active');
+        }
+        if (this.dots[this.currentSlide]) {
+            this.dots[this.currentSlide].classList.add('active');
+        }
+    },
+
+    nextSlide() {
+        this.goToSlide(this.currentSlide + 1);
+    },
+
+    prevSlide() {
+        this.goToSlide(this.currentSlide - 1);
+    },
+
+    startAutoSlide() {
+        this.stopAutoSlide();
+        this.autoSlideInterval = setInterval(() => {
+            this.nextSlide();
+        }, this.autoSlideDelay);
+    },
+
+    stopAutoSlide() {
+        if (this.autoSlideInterval) {
+            clearInterval(this.autoSlideInterval);
+            this.autoSlideInterval = null;
+        }
+    },
+
+    restartAutoSlide() {
+        this.stopAutoSlide();
+        this.startAutoSlide();
+    },
+
+    initTouchEvents() {
+        const slider = document.querySelector('.uc-banner-slider');
+        if (!slider) return;
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        slider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipe(touchStartX, touchEndX);
+        }, { passive: true });
+    },
+
+    handleSwipe(startX, endX) {
+        const threshold = 50;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                this.nextSlide();
+            } else {
+                this.prevSlide();
+            }
+            this.restartAutoSlide();
+        }
+    }
+};
+
+// ========================================
+// URBAN COMPANY SEARCH FUNCTIONALITY
+// ========================================
+const UCSearch = {
+    services: [
+        { name: 'House Wiring', icon: 'fa-plug', keywords: ['wiring', 'wire', 'house', 'new wiring', 'rewiring'] },
+        { name: 'MCB Installation', icon: 'fa-shield-alt', keywords: ['mcb', 'circuit', 'breaker', 'safety'] },
+        { name: 'Ceiling Fan', icon: 'fa-fan', keywords: ['fan', 'ceiling', 'ceiling fan', 'fan repair'] },
+        { name: 'Exhaust Fan', icon: 'fa-wind', keywords: ['exhaust', 'ventilation', 'exhaust fan'] },
+        { name: 'AC Repair', icon: 'fa-snowflake', keywords: ['ac', 'air conditioner', 'cooling', 'ac repair'] },
+        { name: 'Refrigerator Repair', icon: 'fa-temperature-low', keywords: ['fridge', 'refrigerator', 'cooling'] },
+        { name: 'Washing Machine', icon: 'fa-tshirt', keywords: ['washing', 'machine', 'laundry'] },
+        { name: 'Geyser Repair', icon: 'fa-fire', keywords: ['geyser', 'water heater', 'heating'] },
+        { name: 'Mixer Grinder', icon: 'fa-blender', keywords: ['mixer', 'grinder', 'blender', 'kitchen'] },
+        { name: 'Motor Pump', icon: 'fa-water', keywords: ['motor', 'pump', 'submersible', 'borewell'] },
+        { name: 'Emergency Service', icon: 'fa-bolt', keywords: ['emergency', 'urgent', '24/7', 'short circuit'] },
+        { name: 'Switches & Sockets', icon: 'fa-toggle-on', keywords: ['switch', 'socket', 'point', 'electrical point'] }
+    ],
+
+    init() {
+        const searchInput = document.getElementById('heroSearch');
+        const suggestionsContainer = document.getElementById('searchSuggestions');
+
+        if (!searchInput || !suggestionsContainer) return;
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+
+            if (query.length > 0) {
+                const results = this.search(query);
+                this.renderSuggestions(results, suggestionsContainer);
+            } else {
+                this.renderDefaultSuggestions(suggestionsContainer);
+            }
+        });
+
+        // Render default suggestions initially
+        this.renderDefaultSuggestions(suggestionsContainer);
+    },
+
+    search(query) {
+        return this.services.filter(service => {
+            const nameMatch = service.name.toLowerCase().includes(query);
+            const keywordMatch = service.keywords.some(kw => kw.includes(query));
+            return nameMatch || keywordMatch;
+        }).slice(0, 4);
+    },
+
+    renderSuggestions(results, container) {
+        if (results.length === 0) {
+            container.innerHTML = `
+                <a href="services.html" class="uc-suggestion-item">
+                    <i class="fas fa-search"></i>
+                    <span>View all services</span>
+                </a>
+            `;
+            return;
+        }
+
+        container.innerHTML = results.map(service => `
+            <a href="services.html" class="uc-suggestion-item">
+                <i class="fas ${service.icon}"></i>
+                <span>${service.name}</span>
+            </a>
+        `).join('');
+    },
+
+    renderDefaultSuggestions(container) {
+        const defaults = this.services.slice(0, 4);
+        container.innerHTML = defaults.map(service => `
+            <a href="services.html" class="uc-suggestion-item">
+                <i class="fas ${service.icon}"></i>
+                <span>${service.name}</span>
+            </a>
+        `).join('');
+    }
+};
+
+// ========================================
+// URBAN COMPANY APPLIANCE SLIDER
+// ========================================
+const UCApplianceSlider = {
+    sliders: [],
+    scrollAmount: 300,
+
+    init() {
+        // Find all slider sections
+        const sections = document.querySelectorAll('.uc-appliance-section');
+
+        sections.forEach((section, index) => {
+            const track = section.querySelector('.uc-appliance-track');
+            const prevBtn = section.querySelector('.uc-slider-prev');
+            const nextBtn = section.querySelector('.uc-slider-next');
+
+            if (!track) return;
+
+            const slider = { track, prevBtn, nextBtn };
+            this.sliders.push(slider);
+
+            this.bindSliderEvents(slider);
+            this.updateSliderButtonStates(slider);
+        });
+    },
+
+    bindSliderEvents(slider) {
+        if (slider.prevBtn) {
+            slider.prevBtn.addEventListener('click', () => this.scrollPrev(slider));
+        }
+
+        if (slider.nextBtn) {
+            slider.nextBtn.addEventListener('click', () => this.scrollNext(slider));
+        }
+
+        // Update button states on scroll
+        slider.track.addEventListener('scroll', Utils.debounce(() => {
+            this.updateSliderButtonStates(slider);
+        }, 100));
+    },
+
+    scrollPrev(slider) {
+        slider.track.scrollBy({
+            left: -this.scrollAmount,
+            behavior: 'smooth'
+        });
+    },
+
+    scrollNext(slider) {
+        slider.track.scrollBy({
+            left: this.scrollAmount,
+            behavior: 'smooth'
+        });
+    },
+
+    updateSliderButtonStates(slider) {
+        if (!slider.track) return;
+
+        const scrollLeft = slider.track.scrollLeft;
+        const maxScroll = slider.track.scrollWidth - slider.track.clientWidth;
+
+        // Hide buttons completely if no scrolling needed
+        if (maxScroll <= 0) {
+            if (slider.prevBtn) slider.prevBtn.style.display = 'none';
+            if (slider.nextBtn) slider.nextBtn.style.display = 'none';
+            return;
+        } else {
+            if (slider.prevBtn) slider.prevBtn.style.display = 'flex';
+            if (slider.nextBtn) slider.nextBtn.style.display = 'flex';
+        }
+
+        // Hide/show prev button
+        if (slider.prevBtn) {
+            slider.prevBtn.style.opacity = scrollLeft <= 0 ? '0.3' : '1';
+            slider.prevBtn.style.pointerEvents = scrollLeft <= 0 ? 'none' : 'auto';
+        }
+
+        // Hide/show next button
+        if (slider.nextBtn) {
+            slider.nextBtn.style.opacity = scrollLeft >= maxScroll - 1 ? '0.3' : '1';
+            slider.nextBtn.style.pointerEvents = scrollLeft >= maxScroll - 1 ? 'none' : 'auto';
+        }
+    }
+};
+
+// ========================================
 // INITIALIZE APPLICATION
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -919,6 +1182,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ServiceFilter.init();
     CurrentYear.init();
     HeroSlider.init();
+
+    // Urban Company style modules
+    UCBannerSlider.init();
+    UCSearch.init();
+    UCApplianceSlider.init();
 
     // Log initialization
     console.log('TRUST MEE website initialized successfully!');
