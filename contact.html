@@ -142,129 +142,6 @@
             background: #20bd5a;
         }
 
-        /* Contact Form */
-        .contact-form-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            border: 1px solid var(--gray-200);
-        }
-        .contact-form-card h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-        }
-        .contact-form-card > p {
-            color: var(--gray-600);
-            margin-bottom: 24px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--gray-700);
-            margin-bottom: 8px;
-        }
-        .form-group label .required {
-            color: #ef4444;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--gray-300);
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-family: inherit;
-            color: var(--gray-900);
-            background: white;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(0, 180, 232, 0.1);
-        }
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--gray-400);
-        }
-        .form-group select {
-            cursor: pointer;
-        }
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-submit {
-            margin-top: 8px;
-        }
-        .form-submit .btn {
-            width: 100%;
-            padding: 14px 24px;
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: background 0.2s ease;
-        }
-        .form-submit .btn:hover {
-            background: #0095c4;
-        }
-
-        .form-success {
-            display: none;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .form-success.show {
-            display: block;
-        }
-        .form-success-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(34, 197, 94, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-        }
-        .form-success-icon i {
-            font-size: 1.75rem;
-            color: #22c55e;
-        }
-        .form-success h4 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-        }
-        .form-success p {
-            color: var(--gray-600);
-        }
-
         /* Map Section */
         .map-section {
             padding: 0 0 80px;
@@ -462,30 +339,32 @@
                 </div>
 
                 <!-- Contact Form -->
-                <div class="contact-form-card">
-                    <h2>Send Us a Message</h2>
-                    <p>We'll get back to you within 24 hours</p>
+                <div class="contact-form-wrapper">
+                    <h3 class="contact-form-title">Send Us a Message</h3>
+                    <p class="contact-form-subtitle">We'll get back to you within 24 hours</p>
 
-                    <form class="contact-form" id="contactForm">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+                        <input type="hidden" name="access_key" value="45e80363-ed9d-4ca3-874a-bf194a3e84a6">
+
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Your Name <span class="required">*</span></label>
-                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                                <label class="form-label" for="name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number <span class="required">*</span></label>
-                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email (optional)">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email (optional)">
                         </div>
 
                         <div class="form-group">
-                            <label for="service">Service Required <span class="required">*</span></label>
-                            <select id="service" name="service" required>
+                            <label class="form-label" for="service">Service Required <span class="required">*</span></label>
+                            <select id="service" name="service" class="form-select" required>
                                 <option value="">Select a service</option>
                                 <optgroup label="Residential & Commercial">
                                     <option value="House Wiring">House Wiring & Re-wiring</option>
@@ -515,26 +394,24 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="address">Your Address</label>
-                            <input type="text" id="address" name="address" placeholder="Enter your address for service">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Describe your requirement (optional)..."></textarea>
+                            <label class="form-label" for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Describe your requirement (optional)..."></textarea>
                         </div>
 
                         <div class="form-submit">
-                            <button type="submit" class="btn">
-                                <i class="fas fa-paper-plane"></i> Send Message
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
                             </button>
                         </div>
                     </form>
 
                     <div class="form-success" id="formSuccess">
-                        <div class="form-success-icon"><i class="fas fa-check"></i></div>
-                        <h4>Thank You!</h4>
-                        <p>Your message has been sent successfully. We'll contact you soon!</p>
+                        <div class="form-success-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h4 class="form-success-title">Thank You!</h4>
+                        <p class="form-success-message">Your message has been sent successfully. We'll contact you soon!</p>
                     </div>
                 </div>
             </div>
@@ -707,29 +584,5 @@
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 
     <script src="js/app.js"></script>
-    <script>
-        // Form submission - redirect to WhatsApp
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-            const address = document.getElementById('address').value;
-            const message = document.getElementById('message').value;
-
-            let whatsappMessage = `Hi! I need electrical services.\n\n`;
-            whatsappMessage += `Name: ${name}\n`;
-            whatsappMessage += `Phone: ${phone}\n`;
-            if (email) whatsappMessage += `Email: ${email}\n`;
-            whatsappMessage += `Service: ${service}\n`;
-            if (address) whatsappMessage += `Address: ${address}\n`;
-            if (message) whatsappMessage += `Message: ${message}`;
-
-            const whatsappUrl = `https://wa.me/916351802009?text=${encodeURIComponent(whatsappMessage)}`;
-            window.open(whatsappUrl, '_blank');
-        });
-    </script>
 </body>
 </html>

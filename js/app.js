@@ -453,33 +453,45 @@ const Form = {
         e.preventDefault();
         const form = e.target;
         const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
 
         // Validate form
         if (!this.validateForm(form)) {
             return;
         }
 
-        // Collect form data
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
+        // Show loading state
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        }
 
-        // Build WhatsApp message
-        let message = `Hi! I need electrical services.\n\n`;
-        if (data.name) message += `Name: ${data.name}\n`;
-        if (data.phone) message += `Phone: ${data.phone}\n`;
-        if (data.email) message += `Email: ${data.email}\n`;
-        if (data.service) message += `Service: ${data.service}\n`;
-        if (data.address) message += `Address: ${data.address}\n`;
-        if (data.message) message += `Message: ${data.message}\n`;
+        // Submit via AJAX to Web3Forms
+        try {
+            const formData = new FormData(form);
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
 
-        // Open WhatsApp with the message
-        const whatsappUrl = `https://wa.me/918141687112?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
+            const result = await response.json();
 
-        // Show success
-        this.showSuccess(form, formType);
-        form.reset();
-        Utils.showToast('Opening WhatsApp...', 'success');
+            if (result.success) {
+                form.reset();
+                Utils.showToast('Message sent successfully! We will contact you soon.', 'success');
+                this.showSuccess(form, formType);
+            } else {
+                Utils.showToast('Something went wrong. Please try again.', 'error');
+            }
+        } catch (error) {
+            Utils.showToast('Failed to send message. Please try again.', 'error');
+        } finally {
+            // Restore button
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        }
     },
 
     validateForm(form) {

@@ -4221,7 +4221,7 @@ img {
 
 .uc-hero-grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1fr 1.1fr;
     gap: var(--space-8);
     align-items: stretch;
 }
@@ -4253,7 +4253,7 @@ img {
 .uc-service-card-container {
     background: var(--gray-50);
     border-radius: var(--radius-lg);
-    padding: var(--space-5);
+    padding: var(--space-4);
     border: 1px solid var(--gray-200);
 }
 
@@ -4268,7 +4268,7 @@ img {
 .hero-service-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
+    gap: 12px;
 }
 
 .hero-service-item {
@@ -4291,9 +4291,9 @@ img {
 }
 
 .hero-service-icon {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 14px;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4557,7 +4557,8 @@ img {
     grid-template-rows: 1fr 1fr;
     gap: var(--space-3);
     height: 100%;
-    min-height: 580px;
+    min-height: 450px;
+    max-height: 500px;
     width: 100%;
 }
 
