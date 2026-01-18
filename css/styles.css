@@ -4238,7 +4238,6 @@ img {
     margin-bottom: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
 }
 
 .uc-hero-title {
@@ -4554,19 +4553,18 @@ img {
 /* Right Side - Mosaic Image Grid (Urban Company Style) */
 .uc-mosaic-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: var(--space-4);
-    height: 480px;
+    gap: var(--space-3);
+    height: 100%;
+    min-height: 580px;
     width: 100%;
-    max-width: 550px;
 }
 
 .uc-mosaic-item {
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    min-width: 200px;
 }
 
 .uc-mosaic-item img {

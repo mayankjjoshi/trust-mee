@@ -527,68 +527,67 @@
                     <h3 class="contact-form-title">Send Us a Message</h3>
                     <p class="contact-form-subtitle">We'll get back to you within 24 hours</p>
 
-                    <form
-  class="contact-form"
-  id="contactForm"
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
->
+                    <form class="contact-form" id="contactForm">
 
-  <!-- Required hidden field for Netlify -->
-  <input type="hidden" name="form-name" value="contact">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" required>
+                            </div>
+                        </div>
 
-  <!-- Honeypot field (hidden from users) -->
-  <p style="display:none;">
-    <label>Don’t fill this out: <input name="bot-field"></label>
-  </p>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email (optional)">
+                        </div>
 
-  <div class="form-row">
-    <div class="form-group">
-      <label class="form-label">Your Name <span class="required">*</span></label>
-      <input type="text" name="name" class="form-input" required>
-    </div>
+                        <div class="form-group">
+                            <label class="form-label" for="service">Service Required <span class="required">*</span></label>
+                            <select id="service" name="service" class="form-select" required>
+                                <option value="">Select a service</option>
+                                <optgroup label="Residential & Commercial">
+                                    <option value="House Wiring">House Wiring & Re-wiring</option>
+                                    <option value="Electric Points">New Electric Points</option>
+                                    <option value="MCB Installation">MCB Installation</option>
+                                    <option value="Switches">Switches Replacement</option>
+                                    <option value="Ceiling Fan">Ceiling Fan Service</option>
+                                    <option value="Sockets">Sockets & Holders</option>
+                                    <option value="Earthing">Earthing System</option>
+                                </optgroup>
+                                <optgroup label="Home Appliance Repair">
+                                    <option value="Washing Machine">Washing Machine Repair</option>
+                                    <option value="Blender/Mixer">Blender/Mixer Repair</option>
+                                    <option value="Flourmill">Flourmill Repair</option>
+                                    <option value="Geyser">Geyser Service</option>
+                                    <option value="Microwave">Microwave Repair</option>
+                                    <option value="Refrigerator/AC">Refrigerator/AC Repair</option>
+                                </optgroup>
+                                <optgroup label="Other Services">
+                                    <option value="Motor Repair">Electric Motor Repair</option>
+                                    <option value="Pump Repair">Submersible Pump Repair</option>
+                                    <option value="Borewell">Borewell Services</option>
+                                    <option value="Panel Repair">Panel Repair</option>
+                                </optgroup>
+                                <option value="Other">Other Services</option>
+                            </select>
+                        </div>
 
-    <div class="form-group">
-      <label class="form-label">Phone Number <span class="required">*</span></label>
-      <input type="tel" name="phone" class="form-input" required>
-    </div>
-  </div>
+                        <div class="form-group">
+                            <label class="form-label" for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Describe your requirement (optional)..."></textarea>
+                        </div>
 
-  <div class="form-group">
-    <label class="form-label">Email Address</label>
-    <input type="email" name="email" class="form-input">
-  </div>
-
-  <div class="form-group">
-    <label class="form-label">Service Required <span class="required">*</span></label>
-    <select name="service" class="form-select" required>
-      <option value="">Select a service</option>
-      <option value="House Wiring">House Wiring</option>
-      <option value="MCB Installation">MCB Installation</option>
-      <option value="AC Repair">AC Repair</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label class="form-label">Address</label>
-    <input type="text" name="address" class="form-input">
-  </div>
-
-  <div class="form-group">
-    <label class="form-label">Message</label>
-    <textarea name="message" rows="4" class="form-textarea"></textarea>
-  </div>
-
-  <div class="form-submit">
-    <button type="submit" class="btn btn-primary btn-lg">
-      Send Message
-    </button>
-  </div>
-</form>
-
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
 
                     <div class="form-success" id="formSuccess">
                         <div class="form-success-icon">
