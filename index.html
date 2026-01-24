@@ -19,25 +19,40 @@
     <title>TRUST MEE | Electrical Services & Home Appliance Repair in Vadodara</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="logo/favicon.svg">
-    <link rel="icon" type="image/png" href="logo/png.png">
-    <link rel="apple-touch-icon" href="logo/jpg-01.jpg">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="assets/images/logo-apple-touch.jpg">
 
-    <!-- Fonts -->
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://api.web3forms.com">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Critical CSS (inline for above-the-fold) -->
+    <style>
+        :root{--primary-blue:#0077A8;--white:#FFFFFF;--gray-50:#FAFAFA;--gray-200:#EEEEEE;--gray-600:#757575;--gray-900:#212121;--header-height:70px}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Poppins',sans-serif;background:var(--white);overflow-x:hidden}
+        .header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--white);z-index:1000;box-shadow:0 1px 0 var(--gray-200)}
+        .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+        .header-inner{display:flex;align-items:center;justify-content:space-between;height:100%}
+        .logo-img{height:50px;width:auto}
+        .header-contact{display:flex;align-items:center;gap:0.5rem;font-weight:600;color:var(--white);padding:0.5rem 1rem;background:#0077A8;border-radius:9999px;text-decoration:none}
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Font Awesome (defer non-critical icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
-    <!-- Electric Background Animation -->
-    <div class="electric-bg"></div>
-
     <!-- ========================================
          HEADER
          ======================================== -->
@@ -45,7 +60,7 @@
         <div class="container header-inner">
             <!-- Logo -->
             <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+                <img src="assets/images/logo.webp" alt="Trust Mee" class="logo-img" width="150" height="50">
             </a>
 
             <!-- Contact Number -->
@@ -56,6 +71,7 @@
         </div>
     </header>
 
+    <main>
     <!-- ========================================
          HERO SECTION - URBAN COMPANY STYLE
          ======================================== -->
@@ -64,7 +80,7 @@
             <div class="uc-hero-grid">
                 <!-- Left Content -->
                 <div class="uc-hero-left">
-                    <h1 class="uc-hero-title">Electrical Service at your doorstep</h1>
+                    <h1 class="uc-hero-title">Electrical Service at your <span class="text-primary">DOORSTEP</span></h1>
 
                     <!-- Service Card Container -->
                     <div class="uc-service-card-container">
@@ -74,91 +90,91 @@
                         <div class="hero-service-grid">
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/ac-hero-left-section.webp" alt="AC Repair">
+                                    <img src="assets/images/icons/ac-icon.webp" alt="AC Repair" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">AC Repair & Service</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/refrigerator-hero-left-section.webp" alt="Refrigerator Repair">
+                                    <img src="assets/images/icons/refrigerator-icon.webp" alt="Refrigerator Repair" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Refrigerator Repair</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/washing-machine-hero--left-section.webp" alt="Washing Machine Repair">
+                                    <img src="assets/images/icons/washing-machine-icon.webp" alt="Washing Machine Repair" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Washing Machine Repair</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/geyser repair-hero-left-section.webp" alt="Geyser Service">
+                                    <img src="assets/images/icons/geyser-icon.webp" alt="Geyser Service" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Geyser Service</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/microwave-hero-left-section.webp" alt="Microwave Repair">
+                                    <img src="assets/images/icons/microwave-icon.webp" alt="Microwave Repair" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Microwave Repair</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/electric-hero-left-section.webp" alt="Electrical Work">
+                                    <img src="assets/images/icons/electric-icon.webp" alt="Electrical Work" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Electrical Work</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/blender-hero-left-section.jfif" alt="Blender Repair">
+                                    <img src="assets/images/icons/blender-icon.jfif" alt="Blender Repair" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Blender Repair</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/mixer grinder repair.webp" alt="Mixer Grinder Repair">
+                                    <img src="assets/images/icons/mixer-grinder-icon.webp" alt="Mixer Grinder Repair" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Mixer Grinder Repair</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/mcb installation.webp" alt="MCB Installation">
+                                    <img src="assets/images/icons/mcb-icon.webp" alt="MCB Installation" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">MCB Installation</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/fan.webp" alt="Ceiling Fan Service">
+                                    <img src="assets/images/icons/fan-icon.webp" alt="Ceiling Fan Service" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Ceiling Fan Service</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/Switch Board.webp" alt="Switch Board">
+                                    <img src="assets/images/icons/switch-board-icon.webp" alt="Switch Board" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Switch Board</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/bulb holder.webp" alt="Sockets & Holders">
+                                    <img src="assets/images/icons/bulb-holder-icon.webp" alt="Sockets & Holders" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Sockets & Holders</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/ev charger installation.webp" alt="EV Charger">
+                                    <img src="assets/images/icons/ev-charger-icon.webp" alt="EV Charger" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">EV Charger</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/submisserable pump.jfif" alt="Submersible Pump">
+                                    <img src="assets/images/icons/submersible-pump-icon.jfif" alt="Submersible Pump" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">Submersible Pump</span>
                             </a>
                             <a href="services.html" class="hero-service-item">
                                 <div class="hero-service-icon">
-                                    <img src="assets/Services/3phase changeover.jpg" alt="3 Phase Changeover">
+                                    <img src="assets/images/icons/3-phase-changeover-icon.jpg" alt="3 Phase Changeover" width="48" height="48">
                                 </div>
                                 <span class="hero-service-name">3 Phase Changeover</span>
                             </a>
@@ -171,19 +187,19 @@
                     <div class="uc-mosaic-grid">
                         <!-- Top Left - Large -->
                         <div class="uc-mosaic-item uc-mosaic-large-left">
-                            <img src="assets/services-image/home wiring.png" alt="House Wiring">
+                            <img src="assets/images/hero/home-wiring.webp" alt="House Wiring" fetchpriority="high" width="400" height="300">
                         </div>
                         <!-- Top Right - Small -->
                         <div class="uc-mosaic-item uc-mosaic-small-right">
-                            <img src="assets/services-image/AC.webp" alt="AC Service">
+                            <img src="assets/images/hero/ac-service.webp" alt="AC Service" fetchpriority="high" width="200" height="150">
                         </div>
                         <!-- Bottom Left - Small -->
                         <div class="uc-mosaic-item uc-mosaic-small-left">
-                            <img src="assets/services-image/mcb install.png" alt="MCB Installation">
+                            <img src="assets/images/hero/mcb-install.webp" alt="MCB Installation" loading="lazy" width="200" height="150">
                         </div>
                         <!-- Bottom Right - Large Tall -->
                         <div class="uc-mosaic-item uc-mosaic-large-right">
-                            <img src="assets/services-image/commerical.png" alt="Commercial Electrical Work">
+                            <img src="assets/images/hero/switch-board-repair.webp" alt="Switch Board Repair" loading="lazy" width="200" height="300">
                         </div>
                     </div>
                 </div>
@@ -197,7 +213,7 @@
     <section class="uc-appliance-section">
         <div class="container">
             <div class="uc-appliance-header">
-                <h2 class="uc-appliance-title">Appliance repair & service</h2>
+                <h2 class="uc-appliance-title">Appliance Repair & Service</h2>
                 <a href="services.html" class="uc-see-all-btn">See all</a>
             </div>
 
@@ -209,63 +225,63 @@
                 <div class="uc-appliance-track">
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/washing machine.jfif" alt="Washing Machine Repair">
+                            <img src="assets/images/services/washing-machine.jfif" alt="Washing Machine Repair" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Washing Machine</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/refrigerator.webp" alt="Refrigerator Repair">
+                            <img src="assets/images/services/refrigerator.webp" alt="Refrigerator Repair" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Refrigerator Repair</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/AC.webp" alt="AC Repair">
+                            <img src="assets/images/services/ac-repair.webp" alt="AC Repair" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">AC Repair & Service</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/microwave oven.jfif" alt="Microwave Oven Repair">
+                            <img src="assets/images/services/microwave-oven.jfif" alt="Microwave Oven Repair" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Microwave Oven</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/mixer grinder repair.webp" alt="Mixer Grinder Repair">
+                            <img src="assets/images/services/mixer-grinder.webp" alt="Mixer Grinder Repair" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Mixer Grinder</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/blender-hero-left-section.jfif" alt="Blender Repair">
+                            <img src="assets/images/services/blender.jfif" alt="Blender Repair" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Blender</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/flour mill.jfif" alt="Flour Mill Repair">
+                            <img src="assets/images/services/flour-mill.jfif" alt="Flour Mill Repair" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Flour Mill</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/geyser service.webp" alt="Geyser Service">
+                            <img src="assets/images/services/geyser.webp" alt="Geyser Service" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Geyser</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/inverter repair.webp" alt="Inverter Repair">
+                            <img src="assets/images/services/inverter.webp" alt="Inverter Repair" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Inverter & UPS</h3>
                     </a>
@@ -297,56 +313,56 @@
                 <div class="uc-appliance-track uc-rc-track">
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/wiring.webp" alt="House Wiring">
+                            <img src="assets/images/services/house-wiring.webp" alt="House Wiring" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">New House Wiring & Re-wiring</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/switchbox.webp" alt="Electric Point">
+                            <img src="assets/images/services/switch-box.webp" alt="Electric Point" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">New Electric Point</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/mcb installation.webp" alt="MCB Installation">
+                            <img src="assets/images/services/mcb-installation.webp" alt="MCB Installation" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">MCB Installation</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/swtich socket replacement.webp" alt="Switches Replacement">
+                            <img src="assets/images/services/switch-socket.webp" alt="Switches Replacement" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Switches Replacement</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/fan repair.webp" alt="Ceiling Fan">
+                            <img src="assets/images/services/ceiling-fan.webp" alt="Ceiling Fan" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Ceiling Fan Repairing & Installation</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/bulb holder.webp" alt="Sockets & Holders">
+                            <img src="assets/images/services/lighting-holder.webp" alt="Sockets & Holders" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Sockets & Holders Installation</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/electrical earthing.webp" alt="Earthing System">
+                            <img src="assets/images/services/electrical-earthing.webp" alt="Earthing System" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Earthing System Installation</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/ev charger installation.webp" alt="EV Charger">
+                            <img src="assets/images/services/ev-charger.webp" alt="EV Charger" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">EV Charger Installation</h3>
                     </a>
@@ -377,35 +393,35 @@
                 <div class="uc-appliance-track">
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/submisserable pump.jfif" alt="Submersible Pump Repair">
+                            <img src="assets/images/services/submersible-pump.jfif" alt="Submersible Pump Repair" class="img-contain" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Submersible Pump Repair</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/3phase changeover.jpg" alt="3 Phase Changeover">
+                            <img src="assets/images/services/3-phase-changeover.jpg" alt="3 Phase Changeover" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">3 Phase Changeover</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/common-area-panel-fire-pump-control-panel.jpeg" alt="Control Panel">
+                            <img src="assets/images/services/control-panel.jpeg" alt="Control Panel" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Control Panel Work</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/double poll mcb.webp" alt="Double Pole MCB">
+                            <img src="assets/images/services/double-pole-mcb.webp" alt="Double Pole MCB" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Double Pole MCB</h3>
                     </a>
 
                     <a href="services.html" class="uc-appliance-card">
                         <div class="uc-appliance-img">
-                            <img src="assets/Services/wiring.webp" alt="Wiring">
+                            <img src="assets/images/services/house-wiring.webp" alt="Wiring" loading="lazy" width="180" height="180">
                         </div>
                         <h3 class="uc-appliance-name">Emergency Wiring</h3>
                     </a>
@@ -600,6 +616,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- ========================================
          FOOTER
@@ -610,22 +627,14 @@
                 <!-- Brand -->
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+                        <img src="assets/images/logo.webp" alt="Trust Mee" class="logo-img" width="150" height="50">
                     </a>
                     <p class="footer-brand-description">
                         Your trusted electrical service provider in Vadodara. Safe, reliable, and affordable solutions for homes and businesses.
                     </p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="footer-social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/916351802009" class="footer-social-link" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
+                    <a href="https://jsdl.in/DT-59GX52FJWLL" target="_blank">
+                        <img src="assets/images/jd-logo.svg" alt="JustDial" class="logo-img" width="120" height="40">
+                    </a>
                 </div>
 
                 <!-- Quick Links -->
@@ -644,10 +653,10 @@
                 <div>
                     <h4 class="footer-title">Our Services</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html" class="footer-link">House Wiring</a></li>
-                        <li><a href="services.html" class="footer-link">Appliance Repair</a></li>
-                        <li><a href="services.html" class="footer-link">MCB Installation</a></li>
-                        <li><a href="services.html" class="footer-link">Commercial</a></li>
+                        <li><a href="services.html" class="footer-link">Emergency Electrical Problem Solution</a></li>
+                        <li><a href="services.html" class="footer-link">Residential Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Commercial Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Home Appliance Repair & Service</a></li>
                     </ul>
                 </div>
 
@@ -693,6 +702,10 @@
             <i class="fab fa-whatsapp"></i>
             <span class="float-btn-tooltip">WhatsApp</span>
         </a>
+        <a href="https://jsdl.in/DT-59GX52FJWLL" class="float-btn float-btn-justdial" target="_blank" aria-label="JustDial">
+            <img src="assets/images/jd-logo.svg" alt="JustDial" width="40" height="40">
+            <span class="float-btn-tooltip">JustDial</span>
+        </a>
     </div>
 
     <!-- Back to Top -->
@@ -701,6 +714,6 @@
     </a>
 
     <!-- Scripts -->
-    <script src="js/app.js"></script>
+    <script src="js/app.min.js" defer></script>
 </body>
 </html>

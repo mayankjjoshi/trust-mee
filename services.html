@@ -7,184 +7,35 @@
     <meta name="keywords" content="electrical services Vadodara, house wiring, MCB installation, appliance repair, electrician">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#00B4E8">
+    <meta name="author" content="TRUST MEE">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Our Services - TRUST MEE Electrical Services">
+    <meta property="og:description" content="Professional electrical services in Vadodara. Home appliance repair, wiring, MCB installation, AC service, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="TRUST MEE">
 
     <title>Our Services | TRUST MEE - Electrical Services Vadodara</title>
 
-    <link rel="icon" type="image/svg+xml" href="logo/favicon.svg">
-    <link rel="icon" type="image/png" href="logo/png.png">
-    <link rel="apple-touch-icon" href="logo/jpg-01.jpg">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="assets/images/logo-apple-touch.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Services Page */
-        .services-page {
-            padding-top: var(--header-height);
-        }
-
-        /* Page Hero */
-        .page-hero {
-            padding: 60px 0;
-            text-align: center;
-            background: var(--gray-50);
-        }
-        .page-hero h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-        }
-        .page-hero p {
-            color: var(--gray-600);
-            font-size: 1rem;
-        }
-
-        /* Service Section */
-        .service-section {
-            padding: 60px 0;
-        }
-        .service-section:nth-child(even) {
-            background: var(--gray-50);
-        }
-
-        /* Section Header */
-        .section-header-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        .section-header-row h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--gray-900);
-        }
-
-        /* Service Cards Grid */
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-
-        /* Service Card */
-        .service-card {
-            background: white;
-            border-radius: 12px;
-            border: 1px solid var(--gray-200);
-            overflow: hidden;
-            transition: all 0.2s ease;
-        }
-        .service-card:hover {
-            border-color: var(--primary-blue);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Card Image */
-        .service-card-img {
-            width: 100%;
-            height: 120px;
-            overflow: hidden;
-            background: var(--gray-100);
-        }
-        .service-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover .service-card-img img {
-            transform: scale(1.05);
-        }
-
-        /* Card Content */
-        .service-card-content {
-            padding: 14px;
-        }
-        .service-card-name {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        .service-card-points {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .service-card-points li {
-            font-size: 0.8rem;
-            color: var(--gray-600);
-            line-height: 1.4;
-            padding-left: 16px;
-            position: relative;
-            margin-bottom: 4px;
-        }
-        .service-card-points li:last-child {
-            margin-bottom: 0;
-        }
-        .service-card-points li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-size: 0.75rem;
-        }
-
-        /* Responsive */
-        @media (min-width: 480px) {
-            .service-grid {
-                gap: 20px;
-            }
-            .service-card-img {
-                height: 140px;
-            }
-            .service-card-content {
-                padding: 16px;
-            }
-            .service-card-name {
-                font-size: 0.95rem;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .service-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 24px;
-            }
-            .service-card-img {
-                height: 160px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .service-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            .service-card-img {
-                height: 180px;
-            }
-            .service-card-content {
-                padding: 18px;
-            }
-            .service-card-name {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+                <img src="assets/images/logo.webp" alt="Trust Mee" class="logo-img">
             </a>
             <a href="tel:+916351802009" class="header-contact">
                 <i class="fas fa-phone"></i>
@@ -212,118 +63,82 @@
                 <div class="service-grid">
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/washing machine.jfif" alt="Washing Machine Repair">
+                            <img src="assets/images/services/washing-machine.jfif" alt="Washing Machine Repair">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Washing Machine Repair</h3>
-                            <ul class="service-card-points">
-                                <li>All brands supported</li>
-                                <li>Motor, Drum & PCB repair</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/refrigerator.webp" alt="Refrigerator Repair">
+                            <img src="assets/images/services/refrigerator.webp" alt="Refrigerator Repair">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Refrigerator Repair</h3>
-                            <ul class="service-card-points">
-                                <li>All brands supported</li>
-                                <li>Gas refill & compressor</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/AC.webp" alt="AC Repair">
+                            <img src="assets/images/services/ac-repair.webp" alt="AC Repair">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">AC Repair & Service</h3>
-                            <ul class="service-card-points">
-                                <li>Gas refill & cleaning</li>
-                                <li>Installation & maintenance</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/microwave oven.jfif" alt="Microwave Oven Repair">
+                            <img src="assets/images/services/microwave-oven.jfif" alt="Microwave Oven Repair">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Microwave Oven Repair</h3>
-                            <ul class="service-card-points">
-                                <li>All brands supported</li>
-                                <li>Magnetron & door repair</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/mixer grinder repair.webp" alt="Mixer Grinder Repair">
+                            <img src="assets/images/services/mixer-grinder.webp" alt="Mixer Grinder Repair">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Mixer Grinder Repair</h3>
-                            <ul class="service-card-points">
-                                <li>Motor rewinding</li>
-                                <li>Blade & jar replacement</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/blender-hero-left-section.jfif" alt="Blender Repair">
+                            <img src="assets/images/services/blender.jfif" alt="Blender Repair">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Blender Repair</h3>
-                            <ul class="service-card-points">
-                                <li>Motor & blade repair</li>
-                                <li>Jar replacement</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/flour mill.jfif" alt="Flour Mill Repair">
+                            <img src="assets/images/services/flour-mill.jfif" alt="Flour Mill Repair">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Flour Mill Repair</h3>
-                            <ul class="service-card-points">
-                                <li>Motor & blade repair</li>
-                                <li>All brands supported</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/geyser service.webp" alt="Geyser Service">
+                            <img src="assets/images/services/geyser.webp" alt="Geyser Service">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Geyser / Water Heater</h3>
-                            <ul class="service-card-points">
-                                <li>New installation</li>
-                                <li>Element & leak repair</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/inverter repair.webp" alt="Inverter Repair">
+                            <img src="assets/images/services/inverter.webp" alt="Inverter Repair">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Inverter & UPS Repair</h3>
-                            <ul class="service-card-points">
-                                <li>Battery replacement</li>
-                                <li>PCB & wiring repair</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -340,105 +155,73 @@
                 <div class="service-grid">
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/wiring.webp" alt="House Wiring">
+                            <img src="assets/images/services/house-wiring.webp" alt="House Wiring">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">House Wiring</h3>
-                            <ul class="service-card-points">
-                                <li>New & re-wiring work</li>
-                                <li>Concealed wiring</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/switchbox.webp" alt="Switch Box">
+                            <img src="assets/images/services/switch-box.webp" alt="Switch Box">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Switch Box & Points</h3>
-                            <ul class="service-card-points">
-                                <li>New points & extension</li>
-                                <li>Board installation</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/mcb installation.webp" alt="MCB Installation">
+                            <img src="assets/images/services/mcb-installation.webp" alt="MCB Installation">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">MCB Installation</h3>
-                            <ul class="service-card-points">
-                                <li>MCB & RCCB fitting</li>
-                                <li>DB Box & safety upgrade</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/swtich socket replacement.webp" alt="Switches Replacement">
+                            <img src="assets/images/services/switch-socket.webp" alt="Switches Replacement">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Switches & Sockets</h3>
-                            <ul class="service-card-points">
-                                <li>Modular switch fitting</li>
-                                <li>USB outlet & dimmer</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/fan repair.webp" alt="Ceiling Fan Service">
+                            <img src="assets/images/services/ceiling-fan.webp" alt="Ceiling Fan Service">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Ceiling Fan Service</h3>
-                            <ul class="service-card-points">
-                                <li>Installation & rewinding</li>
-                                <li>Motor repair</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/fan regulator.webp" alt="Fan Regulator">
+                            <img src="assets/images/services/fan-regulator.webp" alt="Fan Regulator">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Fan Regulator</h3>
-                            <ul class="service-card-points">
-                                <li>Speed controller fitting</li>
-                                <li>Old regulator replacement</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/bulb holder.webp" alt="Bulb Holder">
+                            <img src="assets/images/services/lighting-holder.webp" alt="Bulb Holder">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Lighting & Holders</h3>
-                            <ul class="service-card-points">
-                                <li>LED & chandelier setup</li>
-                                <li>Holder replacement</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/inverter repair.webp" alt="Inverter Repair">
+                            <img src="assets/images/services/inverter.webp" alt="Inverter Repair">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Inverter & UPS</h3>
-                            <ul class="service-card-points">
-                                <li>Installation & wiring</li>
-                                <li>Battery & repair service</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -455,79 +238,55 @@
                 <div class="service-grid">
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/double poll mcb.webp" alt="Double Pole MCB">
+                            <img src="assets/images/services/double-pole-mcb.webp" alt="Double Pole MCB">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Double Pole MCB</h3>
-                            <ul class="service-card-points">
-                                <li>MCB installation</li>
-                                <li>Panel upgrade</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/3phase changeover.jpg" alt="3 Phase Changeover">
+                            <img src="assets/images/services/3-phase-changeover.jpg" alt="3 Phase Changeover">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">3 Phase Changeover</h3>
-                            <ul class="service-card-points">
-                                <li>Changeover switch setup</li>
-                                <li>Panel & starter work</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/electrical earthing.webp" alt="Electrical Earthing">
+                            <img src="assets/images/services/electrical-earthing.webp" alt="Electrical Earthing">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Electrical Earthing</h3>
-                            <ul class="service-card-points">
-                                <li>New earthing installation</li>
-                                <li>Earthing maintenance</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/submisserable pump.jfif" alt="Submersible Pump">
+                            <img src="assets/images/services/submersible-pump.jfif" alt="Submersible Pump" class="img-contain">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Submersible Pump</h3>
-                            <ul class="service-card-points">
-                                <li>Installation & motor</li>
-                                <li>Panel connection</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/common-area-panel-fire-pump-control-panel.jpeg" alt="Control Panel">
+                            <img src="assets/images/services/control-panel.jpeg" alt="Control Panel">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">Control Panel Work</h3>
-                            <ul class="service-card-points">
-                                <li>Panel installation</li>
-                                <li>Fire pump control</li>
-                            </ul>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-card-img">
-                            <img src="assets/Services/ev charger installation.webp" alt="EV Charger">
+                            <img src="assets/images/services/ev-charger.webp" alt="EV Charger">
                         </div>
                         <div class="service-card-content">
                             <h3 class="service-card-name">EV Charger Installation</h3>
-                            <ul class="service-card-points">
-                                <li>Home & commercial setup</li>
-                                <li>Wiring & connection</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -568,16 +327,14 @@
                 <!-- Brand -->
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+                        <img src="assets/images/logo.webp" alt="Trust Mee" class="logo-img">
                     </a>
                     <p class="footer-brand-description">
                         Your trusted electrical service provider in Vadodara. Safe, reliable, and affordable solutions for homes and businesses.
                     </p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/916351802009" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                    <a href="https://jsdl.in/DT-59GX52FJWLL" target="_blank">
+                        <img src="assets/images/jd-logo.svg" alt="JustDial" class="logo-img">
+                    </a>
                 </div>
 
                 <!-- Quick Links -->
@@ -596,10 +353,10 @@
                 <div>
                     <h4 class="footer-title">Our Services</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html" class="footer-link">House Wiring</a></li>
-                        <li><a href="services.html" class="footer-link">Appliance Repair</a></li>
-                        <li><a href="services.html" class="footer-link">MCB Installation</a></li>
-                        <li><a href="services.html" class="footer-link">Commercial</a></li>
+                        <li><a href="services.html" class="footer-link">Emergency Electrical Problem Solution</a></li>
+                        <li><a href="services.html" class="footer-link">Residential Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Commercial Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Home Appliance Repair & Service</a></li>
                     </ul>
                 </div>
 
@@ -637,9 +394,10 @@
     <div class="floating-buttons">
         <a href="tel:+916351802009" class="float-btn float-btn-call" aria-label="Call Us"><i class="fas fa-phone"></i><span class="float-btn-tooltip">Call Now</span></a>
         <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i><span class="float-btn-tooltip">WhatsApp</span></a>
+        <a href="https://jsdl.in/DT-59GX52FJWLL" class="float-btn float-btn-justdial" target="_blank" aria-label="JustDial"><img src="assets/images/jd-logo.svg" alt="JustDial"><span class="float-btn-tooltip">JustDial</span></a>
     </div>
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 
-    <script src="js/app.js"></script>
+    <script src="js/app.min.js" defer></script>
 </body>
 </html>

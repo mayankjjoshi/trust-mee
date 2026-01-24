@@ -7,235 +7,35 @@
     <meta name="keywords" content="about Trust Mee, electrician Vadodara, electrical company, trusted electrician">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#00B4E8">
+    <meta name="author" content="TRUST MEE">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Us - TRUST MEE Electrical Services">
+    <meta property="og:description" content="Your trusted electrical service provider in Vadodara. Safe, reliable, and affordable electrical solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="TRUST MEE">
 
     <title>About Us | TRUST MEE - Electrical Services Vadodara</title>
 
-    <link rel="icon" type="image/svg+xml" href="logo/favicon.svg">
-    <link rel="icon" type="image/png" href="logo/png.png">
-    <link rel="apple-touch-icon" href="logo/jpg-01.jpg">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="assets/images/logo-apple-touch.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* About Page Styles */
-        .about-page {
-            padding-top: var(--header-height);
-        }
-
-        /* Page Hero */
-        .page-hero {
-            padding: var(--space-10) 0;
-            text-align: center;
-            background: var(--gray-50);
-        }
-        .page-hero h1 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: var(--space-2);
-        }
-        .page-hero p {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-        }
-
-        /* About Section */
-        .about-section {
-            padding: var(--space-10) 0;
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-8);
-            align-items: center;
-        }
-        @media (min-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .about-image {
-            text-align: center;
-        }
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--radius-lg);
-        }
-
-        .about-content h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--gray-800);
-            margin-bottom: var(--space-4);
-        }
-        .about-content h2 span {
-            color: var(--primary-blue);
-        }
-        .about-content p {
-            font-size: 0.95rem;
-            color: var(--gray-600);
-            line-height: 1.7;
-            margin-bottom: var(--space-4);
-        }
-
-        /* Features List */
-        .features-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-3);
-            margin-bottom: var(--space-6);
-        }
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-        }
-        .feature-item i {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary-blue);
-            color: var(--white);
-            border-radius: var(--radius-full);
-            font-size: 0.7rem;
-        }
-        .feature-item span {
-            font-size: 0.85rem;
-            color: var(--gray-700);
-            font-weight: 500;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            padding: var(--space-10) 0;
-            background: var(--gray-50);
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-4);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .stat-card {
-            background: var(--white);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--gray-200);
-            padding: var(--space-6);
-            text-align: center;
-            transition: var(--transition);
-        }
-        .stat-card:hover {
-            border-color: var(--primary-blue);
-            box-shadow: var(--shadow-md);
-        }
-        .stat-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary-blue-light);
-            color: var(--primary-blue);
-            border-radius: var(--radius-md);
-            font-size: 1.25rem;
-            margin: 0 auto var(--space-3);
-        }
-        .stat-number {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--gray-800);
-            margin-bottom: var(--space-1);
-        }
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--gray-500);
-        }
-
-        /* Values Section */
-        .values-section {
-            padding: var(--space-10) 0;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--space-8);
-        }
-        .section-header h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--gray-800);
-            margin-bottom: var(--space-2);
-        }
-        .section-header h2 span {
-            color: var(--primary-blue);
-        }
-        .section-header p {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-4);
-        }
-        @media (min-width: 768px) {
-            .values-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .value-card {
-            background: var(--white);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--gray-200);
-            padding: var(--space-5);
-            text-align: center;
-            transition: var(--transition);
-        }
-        .value-card:hover {
-            border-color: var(--primary-blue);
-            box-shadow: var(--shadow-md);
-        }
-        .value-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary-blue-light);
-            color: var(--primary-blue);
-            border-radius: var(--radius-md);
-            font-size: 1.25rem;
-            margin: 0 auto var(--space-3);
-        }
-        .value-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--gray-800);
-            margin-bottom: var(--space-2);
-        }
-        .value-card p {
-            font-size: 0.85rem;
-            color: var(--gray-600);
-            line-height: 1.5;
-        }
-
-    </style>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+                <img src="assets/images/logo.webp" alt="Trust Mee" class="logo-img">
             </a>
             <a href="tel:+916351802009" class="header-contact">
                 <i class="fas fa-phone"></i>
@@ -258,7 +58,7 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-image">
-                        <img src="assets/about-team.svg" alt="Trust Mee Team">
+                        <img src="assets/images/about-team.svg" alt="Trust Mee Team">
                     </div>
                     <div class="about-content">
                         <h2>Your Trusted <span>Electrical Partner</span></h2>
@@ -394,16 +194,14 @@
                 <!-- Brand -->
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+                        <img src="assets/images/logo.webp" alt="Trust Mee" class="logo-img">
                     </a>
                     <p class="footer-brand-description">
                         Your trusted electrical service provider in Vadodara. Safe, reliable, and affordable solutions for homes and businesses.
                     </p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/916351802009" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                    <a href="https://jsdl.in/DT-59GX52FJWLL" target="_blank">
+                        <img src="assets/images/jd-logo.svg" alt="JustDial" class="logo-img">
+                    </a>
                 </div>
 
                 <!-- Quick Links -->
@@ -422,10 +220,10 @@
                 <div>
                     <h4 class="footer-title">Our Services</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html" class="footer-link">House Wiring</a></li>
-                        <li><a href="services.html" class="footer-link">Appliance Repair</a></li>
-                        <li><a href="services.html" class="footer-link">MCB Installation</a></li>
-                        <li><a href="services.html" class="footer-link">Commercial</a></li>
+                        <li><a href="services.html" class="footer-link">Emergency Electrical Problem Solution</a></li>
+                        <li><a href="services.html" class="footer-link">Residential Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Commercial Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Home Appliance Repair & Service</a></li>
                     </ul>
                 </div>
 
@@ -463,9 +261,10 @@
     <div class="floating-buttons">
         <a href="tel:+916351802009" class="float-btn float-btn-call" aria-label="Call Us"><i class="fas fa-phone"></i><span class="float-btn-tooltip">Call Now</span></a>
         <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i><span class="float-btn-tooltip">WhatsApp</span></a>
+        <a href="https://jsdl.in/DT-59GX52FJWLL" class="float-btn float-btn-justdial" target="_blank" aria-label="JustDial"><img src="assets/images/jd-logo.svg" alt="JustDial"><span class="float-btn-tooltip">JustDial</span></a>
     </div>
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 
-    <script src="js/app.js"></script>
+    <script src="js/app.min.js" defer></script>
 </body>
 </html>

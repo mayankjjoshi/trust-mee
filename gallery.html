@@ -7,266 +7,35 @@
     <meta name="keywords" content="electrical work portfolio, Trust Mee projects, electrician Vadodara gallery">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#00B4E8">
+    <meta name="author" content="TRUST MEE">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gallery - TRUST MEE Electrical Services">
+    <meta property="og:description" content="View our portfolio of completed electrical projects in Vadodara. Residential, commercial, and industrial electrical work.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="TRUST MEE">
 
     <title>Gallery | TRUST MEE - Electrical Services Vadodara</title>
 
-    <link rel="icon" type="image/svg+xml" href="logo/favicon.svg">
-    <link rel="icon" type="image/png" href="logo/png.png">
-    <link rel="apple-touch-icon" href="logo/jpg-01.jpg">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="assets/images/logo-apple-touch.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Gallery Page Styles */
-        .gallery-page {
-            padding-top: var(--header-height);
-        }
-
-        /* Page Hero */
-        .page-hero {
-            padding: var(--space-10) 0;
-            text-align: center;
-            background: var(--gray-50);
-        }
-        .page-hero h1 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: var(--space-2);
-        }
-        .page-hero p {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            padding: var(--space-10) 0;
-        }
-
-        /* Filter Buttons */
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-8);
-            flex-wrap: wrap;
-        }
-        .filter-btn {
-            padding: 8px 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--gray-600);
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: var(--radius-full);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--primary-blue);
-            color: var(--white);
-            border-color: var(--primary-blue);
-        }
-
-        /* Gallery Grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-4);
-        }
-        @media (min-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        @media (min-width: 1024px) {
-            .gallery-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        /* Gallery Item */
-        .gallery-item {
-            position: relative;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            background: var(--gray-100);
-            aspect-ratio: 1;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .gallery-item:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-        }
-
-        /* Gallery Overlay */
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: var(--space-3);
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
-            transform: translateY(100%);
-            transition: var(--transition);
-        }
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-        .gallery-overlay h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--white);
-            margin-bottom: 2px;
-        }
-        .gallery-overlay p {
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.8);
-        }
-
-        /* Gallery Item with Image */
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Coming Soon Card */
-        .coming-soon {
-            padding: var(--space-10);
-            text-align: center;
-            background: var(--gray-50);
-            border-radius: var(--radius-lg);
-            border: 2px dashed var(--gray-300);
-            margin-top: var(--space-6);
-        }
-        .coming-soon i {
-            font-size: 3rem;
-            color: var(--primary-blue);
-            margin-bottom: var(--space-4);
-            display: block;
-        }
-        .coming-soon h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--gray-800);
-            margin-bottom: var(--space-2);
-        }
-        .coming-soon p {
-            color: var(--gray-600);
-            margin-bottom: var(--space-5);
-        }
-        .coming-soon .btn-icon {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            padding: 12px 24px;
-            font-size: 0.9rem;
-        }
-        .coming-soon .btn-icon i {
-            font-size: 0.9rem;
-            margin-bottom: 0;
-            color: inherit;
-        }
-
-        /* Testimonials Section */
-        .testimonials-section {
-            padding: var(--space-10) 0;
-            background: var(--gray-50);
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--space-8);
-        }
-        .section-header h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--gray-800);
-            margin-bottom: var(--space-2);
-        }
-        .section-header h2 span {
-            color: var(--primary-blue);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-4);
-        }
-        @media (min-width: 768px) {
-            .testimonials-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--gray-200);
-            padding: var(--space-5);
-            transition: var(--transition);
-        }
-        .testimonial-card:hover {
-            border-color: var(--primary-blue);
-            box-shadow: var(--shadow-md);
-        }
-        .testimonial-stars {
-            color: #fbbf24;
-            margin-bottom: var(--space-3);
-        }
-        .testimonial-stars i {
-            font-size: 0.9rem;
-        }
-        .testimonial-text {
-            font-size: 0.9rem;
-            color: var(--gray-600);
-            line-height: 1.6;
-            margin-bottom: var(--space-4);
-        }
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-        }
-        .testimonial-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-full);
-            background: var(--primary-blue);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .testimonial-name {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--gray-800);
-        }
-        .testimonial-location {
-            font-size: 0.75rem;
-            color: var(--gray-500);
-        }
-
-    </style>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+                <img src="assets/images/logo.webp" alt="Trust Mee" class="logo-img">
             </a>
             <a href="tel:+916351802009" class="header-contact">
                 <i class="fas fa-phone"></i>
@@ -299,7 +68,7 @@
                 <div class="gallery-grid">
                     <!-- Item 1 -->
                     <div class="gallery-item" data-category="residential">
-                        <img src="assets/Services/wiring.webp" alt="House Wiring">
+                        <img src="assets/images/services/house-wiring.webp" alt="House Wiring">
                         <div class="gallery-overlay">
                             <h4>House Wiring</h4>
                             <p>Residential</p>
@@ -308,7 +77,7 @@
 
                     <!-- Item 2 -->
                     <div class="gallery-item" data-category="residential">
-                        <img src="assets/Services/mcb installation.webp" alt="MCB Installation">
+                        <img src="assets/images/services/mcb-installation.webp" alt="MCB Installation">
                         <div class="gallery-overlay">
                             <h4>MCB Installation</h4>
                             <p>Residential</p>
@@ -317,7 +86,7 @@
 
                     <!-- Item 3 -->
                     <div class="gallery-item" data-category="appliance">
-                        <img src="assets/Services/AC.webp" alt="AC Repair">
+                        <img src="assets/images/services/ac-repair.webp" alt="AC Repair">
                         <div class="gallery-overlay">
                             <h4>AC Repair</h4>
                             <p>Appliance</p>
@@ -326,7 +95,7 @@
 
                     <!-- Item 4 -->
                     <div class="gallery-item" data-category="appliance">
-                        <img src="assets/Services/washing machine.webp" alt="Washing Machine Repair">
+                        <img src="assets/images/services/washing-machine.jfif" alt="Washing Machine Repair">
                         <div class="gallery-overlay">
                             <h4>Washing Machine</h4>
                             <p>Appliance</p>
@@ -335,7 +104,7 @@
 
                     <!-- Item 5 -->
                     <div class="gallery-item" data-category="residential">
-                        <img src="assets/Services/fan repair.webp" alt="Fan Repair">
+                        <img src="assets/images/services/ceiling-fan.webp" alt="Fan Repair">
                         <div class="gallery-overlay">
                             <h4>Ceiling Fan Service</h4>
                             <p>Residential</p>
@@ -344,7 +113,7 @@
 
                     <!-- Item 6 -->
                     <div class="gallery-item" data-category="commercial">
-                        <img src="assets/Services/switchbox.webp" alt="Switch Box">
+                        <img src="assets/images/services/switch-box.webp" alt="Switch Box">
                         <div class="gallery-overlay">
                             <h4>Switch Box</h4>
                             <p>Commercial</p>
@@ -353,7 +122,7 @@
 
                     <!-- Item 7 -->
                     <div class="gallery-item" data-category="appliance">
-                        <img src="assets/Services/geyser service.webp" alt="Geyser Service">
+                        <img src="assets/images/services/geyser.webp" alt="Geyser Service">
                         <div class="gallery-overlay">
                             <h4>Geyser Service</h4>
                             <p>Appliance</p>
@@ -362,7 +131,7 @@
 
                     <!-- Item 8 -->
                     <div class="gallery-item" data-category="commercial">
-                        <img src="assets/Services/3 phase changeover.webp" alt="3 Phase Changeover">
+                        <img src="assets/images/services/3-phase-changeover.jpg" alt="3 Phase Changeover">
                         <div class="gallery-overlay">
                             <h4>3 Phase Changeover</h4>
                             <p>Commercial</p>
@@ -371,7 +140,7 @@
 
                     <!-- Item 9 -->
                     <div class="gallery-item" data-category="appliance">
-                        <img src="assets/Services/mixer grinder repair.webp" alt="Mixer Grinder Repair">
+                        <img src="assets/images/services/mixer-grinder.webp" alt="Mixer Grinder Repair">
                         <div class="gallery-overlay">
                             <h4>Mixer Grinder</h4>
                             <p>Appliance</p>
@@ -380,7 +149,7 @@
 
                     <!-- Item 10 -->
                     <div class="gallery-item" data-category="residential">
-                        <img src="assets/Services/swtich socket replacement.webp" alt="Switch Socket">
+                        <img src="assets/images/services/switch-socket.webp" alt="Switch Socket">
                         <div class="gallery-overlay">
                             <h4>Switch & Socket</h4>
                             <p>Residential</p>
@@ -389,7 +158,7 @@
 
                     <!-- Item 11 -->
                     <div class="gallery-item" data-category="commercial">
-                        <img src="assets/Services/inverter repair.webp" alt="Inverter Repair">
+                        <img src="assets/images/services/inverter.webp" alt="Inverter Repair">
                         <div class="gallery-overlay">
                             <h4>Inverter Repair</h4>
                             <p>Commercial</p>
@@ -398,7 +167,7 @@
 
                     <!-- Item 12 -->
                     <div class="gallery-item" data-category="residential">
-                        <img src="assets/Services/bulb holder.webp" alt="Bulb Holder">
+                        <img src="assets/images/services/lighting-holder.webp" alt="Bulb Holder">
                         <div class="gallery-overlay">
                             <h4>Lighting</h4>
                             <p>Residential</p>
@@ -518,16 +287,14 @@
                 <!-- Brand -->
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+                        <img src="assets/images/logo.webp" alt="Trust Mee" class="logo-img">
                     </a>
                     <p class="footer-brand-description">
                         Your trusted electrical service provider in Vadodara. Safe, reliable, and affordable solutions for homes and businesses.
                     </p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/916351802009" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                    <a href="https://jsdl.in/DT-59GX52FJWLL" target="_blank">
+                        <img src="assets/images/jd-logo.svg" alt="JustDial" class="logo-img">
+                    </a>
                 </div>
 
                 <!-- Quick Links -->
@@ -546,10 +313,10 @@
                 <div>
                     <h4 class="footer-title">Our Services</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html" class="footer-link">House Wiring</a></li>
-                        <li><a href="services.html" class="footer-link">Appliance Repair</a></li>
-                        <li><a href="services.html" class="footer-link">MCB Installation</a></li>
-                        <li><a href="services.html" class="footer-link">Commercial</a></li>
+                        <li><a href="services.html" class="footer-link">Emergency Electrical Problem Solution</a></li>
+                        <li><a href="services.html" class="footer-link">Residential Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Commercial Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Home Appliance Repair & Service</a></li>
                     </ul>
                 </div>
 
@@ -587,39 +354,10 @@
     <div class="floating-buttons">
         <a href="tel:+916351802009" class="float-btn float-btn-call" aria-label="Call Us"><i class="fas fa-phone"></i><span class="float-btn-tooltip">Call Now</span></a>
         <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i><span class="float-btn-tooltip">WhatsApp</span></a>
+        <a href="https://jsdl.in/DT-59GX52FJWLL" class="float-btn float-btn-justdial" target="_blank" aria-label="JustDial"><img src="assets/images/jd-logo.svg" alt="JustDial"><span class="float-btn-tooltip">JustDial</span></a>
     </div>
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 
-    <script src="js/app.js"></script>
-    <script>
-        // Gallery Filter Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-
-                    const filter = this.getAttribute('data-filter');
-
-                    galleryItems.forEach(item => {
-                        if (filter === 'all') {
-                            item.style.display = 'block';
-                        } else {
-                            if (item.getAttribute('data-category') === filter) {
-                                item.style.display = 'block';
-                            } else {
-                                item.style.display = 'none';
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    </script>
+    <script src="js/app.min.js" defer></script>
 </body>
 </html>

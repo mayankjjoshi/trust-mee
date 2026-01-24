@@ -7,256 +7,36 @@
     <meta name="keywords" content="contact electrician Vadodara, Trust Mee contact, electrical service phone number">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#00B4E8">
+    <meta name="author" content="TRUST MEE">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Us - TRUST MEE Electrical Services">
+    <meta property="og:description" content="Get in touch with TRUST MEE for electrical services in Vadodara. Call +91 6351802009 or visit us at Ellora Park.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="TRUST MEE">
 
     <title>Contact Us | TRUST MEE - Electrical Services Vadodara</title>
 
-    <link rel="icon" type="image/svg+xml" href="logo/favicon.svg">
-    <link rel="icon" type="image/png" href="logo/png.png">
-    <link rel="apple-touch-icon" href="logo/jpg-01.jpg">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="assets/images/logo-apple-touch.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Page Hero */
-        .page-hero {
-            background: var(--gray-50);
-            padding: 60px 0;
-            text-align: center;
-        }
-        .page-hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-        }
-        .page-hero p {
-            color: var(--gray-600);
-            font-size: 1.1rem;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 80px 0;
-        }
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 48px;
-            align-items: start;
-        }
-
-        /* Contact Info */
-        .contact-info-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            border: 1px solid var(--gray-200);
-        }
-        .contact-info-card h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-        }
-        .contact-info-card > p {
-            color: var(--gray-600);
-            margin-bottom: 32px;
-        }
-        .contact-item {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-        .contact-item:last-child {
-            margin-bottom: 0;
-        }
-        .contact-item-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--gray-100);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .contact-item-icon i {
-            font-size: 1.25rem;
-            color: var(--primary-blue);
-        }
-        .contact-item-icon.whatsapp {
-            background: rgba(37, 211, 102, 0.1);
-        }
-        .contact-item-icon.whatsapp i {
-            color: #25d366;
-        }
-        .contact-item-content h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 4px;
-        }
-        .contact-item-content p,
-        .contact-item-content a {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            text-decoration: none;
-        }
-        .contact-item-content a:hover {
-            color: var(--primary-blue);
-        }
-
-        .contact-buttons {
-            display: flex;
-            gap: 12px;
-            margin-top: 32px;
-        }
-        .contact-buttons .btn {
-            flex: 1;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 14px 20px;
-            border-radius: 10px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        .btn-call {
-            background: var(--primary-blue);
-            color: white;
-        }
-        .btn-call:hover {
-            background: #0095c4;
-        }
-        .btn-whatsapp {
-            background: #25d366;
-            color: white;
-        }
-        .btn-whatsapp:hover {
-            background: #20bd5a;
-        }
-
-        /* Map Section */
-        .map-section {
-            padding: 0 0 80px;
-        }
-        .map-container {
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--gray-200);
-        }
-        .map-container iframe {
-            display: block;
-        }
-
-        /* Quick Contact Cards */
-        .quick-contact {
-            padding: 80px 0;
-            background: var(--gray-50);
-        }
-        .quick-contact-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .quick-contact-header h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-        }
-        .quick-contact-header p {
-            color: var(--gray-600);
-        }
-        .quick-contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .quick-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-            border: 1px solid var(--gray-200);
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        .quick-card:hover {
-            border-color: var(--primary-blue);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-        .quick-card-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(0, 180, 232, 0.1);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-        }
-        .quick-card-icon i {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-        }
-        .quick-card-icon.whatsapp {
-            background: rgba(37, 211, 102, 0.1);
-        }
-        .quick-card-icon.whatsapp i {
-            color: #25d366;
-        }
-        .quick-card-icon.location {
-            background: rgba(255, 107, 53, 0.1);
-        }
-        .quick-card-icon.location i {
-            color: #ff6b35;
-        }
-        .quick-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 8px;
-        }
-        .quick-card p {
-            color: var(--gray-600);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 768px) {
-            .page-hero h1 {
-                font-size: 2rem;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .quick-contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://api.web3forms.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="css/styles.min.css">
 </head>
-<body>
+<body class="contact-page">
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+                <img src="assets/images/logo.webp" alt="Trust Mee" class="logo-img">
             </a>
             <a href="tel:+916351802009" class="header-contact">
                 <i class="fas fa-phone"></i>
@@ -505,22 +285,14 @@
                 <!-- Brand -->
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="assets/logo.png" alt="Trust Mee" class="logo-img">
+                        <img src="assets/images/logo.webp" alt="Trust Mee" class="logo-img">
                     </a>
                     <p class="footer-brand-description">
                         Your trusted electrical service provider in Vadodara. Safe, reliable, and affordable solutions for homes and businesses.
                     </p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="footer-social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/916351802009" class="footer-social-link" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
+                    <a href="https://jsdl.in/DT-59GX52FJWLL" target="_blank">
+                        <img src="assets/images/jd-logo.svg" alt="JustDial" class="logo-img">
+                    </a>
                 </div>
 
                 <!-- Quick Links -->
@@ -539,10 +311,10 @@
                 <div>
                     <h4 class="footer-title">Our Services</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html" class="footer-link">House Wiring</a></li>
-                        <li><a href="services.html" class="footer-link">Appliance Repair</a></li>
-                        <li><a href="services.html" class="footer-link">MCB Installation</a></li>
-                        <li><a href="services.html" class="footer-link">Commercial</a></li>
+                        <li><a href="services.html" class="footer-link">Emergency Electrical Problem Solution</a></li>
+                        <li><a href="services.html" class="footer-link">Residential Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Commercial Wiring</a></li>
+                        <li><a href="services.html" class="footer-link">Home Appliance Repair & Service</a></li>
                     </ul>
                 </div>
 
@@ -580,9 +352,10 @@
     <div class="floating-buttons">
         <a href="tel:+916351802009" class="float-btn float-btn-call" aria-label="Call Us"><i class="fas fa-phone"></i><span class="float-btn-tooltip">Call Now</span></a>
         <a href="https://wa.me/916351802009?text=Hi!%20I%20need%20electrical%20services." class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i><span class="float-btn-tooltip">WhatsApp</span></a>
+        <a href="https://jsdl.in/DT-59GX52FJWLL" class="float-btn float-btn-justdial" target="_blank" aria-label="JustDial"><img src="assets/images/jd-logo.svg" alt="JustDial"><span class="float-btn-tooltip">JustDial</span></a>
     </div>
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 
-    <script src="js/app.js"></script>
+    <script src="js/app.min.js" defer></script>
 </body>
 </html>

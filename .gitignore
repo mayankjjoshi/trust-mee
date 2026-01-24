@@ -35,3 +35,9 @@ build/
 # Backup files
 *.bak
 *.backup
+
+# Dev/Documentation files
+PERFORMANCE.md
+lighthouse.md
+optimize-images.js
+package-lock.json

@@ -1,0 +1,25 @@
+{
+  "name": "trust-mee-website",
+  "version": "1.0.0",
+  "description": "TRUST MEE - Electrical Services Website",
+  "scripts": {
+    "build": "node build.js",
+    "optimize-images": "node optimize-images.js",
+    "serve": "npx serve . -l 3000",
+    "serve:prod": "npx serve . -l 3000 -s",
+    "test:lighthouse": "echo 'Open Chrome DevTools > Lighthouse tab > Generate report'"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "serve": "^14.0.0",
+    "sharp": "^0.33.0",
+    "terser": "^5.46.0"
+  },
+  "keywords": [
+    "electrician",
+    "vadodara",
+    "electrical-services"
+  ],
+  "author": "TRUST MEE",
+  "license": "ISC"
+}
