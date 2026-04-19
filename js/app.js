@@ -793,6 +793,38 @@ document.addEventListener('DOMContentLoaded', () => {
     CurrentYear.init();
     UCApplianceSlider.init();
 
+    // Hero Quick Form WhatsApp Integration
+    const heroForm = document.getElementById('heroQuickForm');
+    if (heroForm) {
+        heroForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('heroName').value.trim();
+            const phone = document.getElementById('heroPhone').value.trim();
+            const service = document.getElementById('heroService').value;
+
+            if (!name || !phone || !service) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Construct WhatsApp message
+            const message = `New Service Inquiry\n-------------------\nName: ${name}\nPhone: ${phone}\nService: ${service}\n-------------------\nPlease contact me at your earliest convenience. Thank you!`;
+
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+
+            // WhatsApp Business API link
+            const whatsappUrl = `https://wa.me/916351802009?text=${encodedMessage}`;
+
+            // Open WhatsApp in new window
+            window.open(whatsappUrl, '_blank');
+
+            // Reset form
+            heroForm.reset();
+        });
+    }
+
     // Deferred modules (after first paint)
     requestAnimationFrame(() => {
         Navigation.init();
