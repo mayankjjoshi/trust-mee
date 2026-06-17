@@ -406,14 +406,16 @@ const Form = {
                             (pos) => {
                                 const lat = pos.coords.latitude;
                                 const lng = pos.coords.longitude;
-                                window.open(`https://www.google.com/maps?q=${lat},${lng}`, '_blank');
+                                window.open(`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`, '_blank');
                                 btn.innerHTML = originalHtml;
                             },
                             (err) => {
+                                console.warn("Geolocation error:", err);
+                                alert("Could not get your exact location (make sure location permissions are allowed). Opening general maps instead.");
                                 window.open('https://maps.google.com', '_blank');
                                 btn.innerHTML = originalHtml;
                             },
-                            { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+                            { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
                         );
                     } else {
                         window.open('https://maps.google.com', '_blank');
