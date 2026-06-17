@@ -397,7 +397,28 @@ const Form = {
                 if (input) {
                     input.removeAttribute('readonly');
                     input.focus();
-                    window.open('https://maps.google.com', '_blank');
+                    
+                    const originalHtml = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Locating...';
+                    
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(
+                            (pos) => {
+                                const lat = pos.coords.latitude;
+                                const lng = pos.coords.longitude;
+                                window.open(`https://www.google.com/maps?q=${lat},${lng}`, '_blank');
+                                btn.innerHTML = originalHtml;
+                            },
+                            (err) => {
+                                window.open('https://maps.google.com', '_blank');
+                                btn.innerHTML = originalHtml;
+                            },
+                            { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+                        );
+                    } else {
+                        window.open('https://maps.google.com', '_blank');
+                        btn.innerHTML = originalHtml;
+                    }
                 }
             });
         });
