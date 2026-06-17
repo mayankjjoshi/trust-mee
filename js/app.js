@@ -98,9 +98,14 @@ const Utils = {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     },
 
-    // Validate phone (Indian format)
+    // Validate phone
     isValidPhone(phone) {
-        return /^[6-9]\d{9}$/.test(phone.replace(/\D/g, ''));
+        const cleanNum = phone.replace(/\D/g, '');
+        // Extract last 10 digits if someone pasted with country code
+        const last10 = cleanNum.length >= 10 ? cleanNum.slice(-10) : cleanNum;
+        // Basic validation: at least 10 digits in total, and last 10 should be numeric.
+        // We will just allow any number that is at least 10 digits.
+        return cleanNum.length >= 10 && cleanNum.length <= 15;
     },
 
     // Show toast notification
