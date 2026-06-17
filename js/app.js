@@ -17,7 +17,8 @@ const CONFIG = {
         days: [1, 2, 3, 4, 5, 6] // Monday to Saturday
     },
     scrollThreshold: 100,
-    animationThreshold: 0.1
+    animationThreshold: 0.1,
+    apiBaseUrl: 'http://localhost:4000' // Update this to production URL on deployment
 };
 
 // ========================================
@@ -368,6 +369,19 @@ const Form = {
     init() {
         this.bindEvents();
         this.setupPhoneInputs();
+        this.setupLocationButtons();
+    },
+
+    setupLocationButtons() {
+        document.querySelectorAll('.get-location-btn, #heroLocationBtn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const input = btn.parentElement.querySelector('input[name="address"]');
+                if (window.LocationPicker) {
+                    window.LocationPicker.open(input);
+                }
+            });
+        });
     },
 
     bindEvents() {
@@ -413,12 +427,22 @@ const Form = {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         }
 
-        // Submit via AJAX to Web3Forms
+        // Submit via AJAX to Dashboard API
         try {
             const formData = new FormData(form);
-            const response = await fetch('https://api.web3forms.com/submit', {
+            const payload = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                address: formData.get('address'),
+                lat: form.querySelector('input[name="address"]')?.dataset.lat || null,
+                lng: form.querySelector('input[name="address"]')?.dataset.lng || null,
+                problem: formData.get('problem') || formData.get('message') || formData.get('service'),
+            };
+
+            const response = await fetch(`${CONFIG.apiBaseUrl}/website/lead`, {
                 method: 'POST',
-                body: formData
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
             });
 
             const result = await response.json();
@@ -785,6 +809,56 @@ const UCApplianceSlider = {
 };
 
 // ========================================
+// LOCATION PICKER MODULE
+// ========================================
+window.LocationHandler = {
+    init() {
+        document.querySelectorAll('.get-location-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.getLocation(btn);
+            });
+        });
+    },
+
+    getLocation(btn) {
+        const inputField = btn.parentElement.querySelector('input');
+        if (!inputField) return;
+
+        // Visual feedback
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        
+        if (!inputField.value) {
+            inputField.placeholder = 'Paste Google Maps link here...';
+        }
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    const lat = pos.coords.latitude;
+                    const lng = pos.coords.longitude;
+                    
+                    window.open(`https://www.google.com/maps?q=${lat},${lng}`, '_blank');
+                    
+                    btn.innerHTML = originalHtml;
+                    if(window.Utils) window.Utils.showToast('Google Maps opened. Please copy the link and paste it here.', 'success');
+                },
+                (err) => {
+                    window.open('https://www.google.com/maps', '_blank');
+                    btn.innerHTML = originalHtml;
+                    if(window.Utils) window.Utils.showToast('Please find your location on the map and paste the link.', 'info');
+                },
+                { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+            );
+        } else {
+            window.open('https://www.google.com/maps', '_blank');
+            btn.innerHTML = originalHtml;
+        }
+    }
+};
+
+// ========================================
 // INITIALIZE APPLICATION
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -796,20 +870,58 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hero Quick Form WhatsApp Integration
     const heroForm = document.getElementById('heroQuickForm');
     if (heroForm) {
-        heroForm.addEventListener('submit', function(e) {
+        heroForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
             const name = document.getElementById('heroName').value.trim();
             const phone = document.getElementById('heroPhone').value.trim();
-            const service = document.getElementById('heroService').value;
+            const service = document.getElementById('heroService').value.trim();
+            const streetAddress = document.getElementById('heroStreet').value.trim();
+            const address = document.getElementById('heroAddress').value.trim();
 
-            if (!name || !phone || !service) {
+            if (!name || !phone || !service || !streetAddress || !address) {
                 alert('Please fill in all fields');
                 return;
             }
 
+            const submitBtn = heroForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            }
+
+            const addressInput = document.getElementById('heroAddress');
+            const lat = addressInput?.dataset.lat || null;
+            const lng = addressInput?.dataset.lng || null;
+
+            try {
+                // Post to Dashboard API
+                await fetch(`${CONFIG.apiBaseUrl}/website/lead`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        phone: phone,
+                        address: streetAddress ? `${streetAddress}\nMap Link: ${address}` : address,
+                        lat: lat,
+                        lng: lng,
+                        problem: service,
+                        serviceTimeMins: 60
+                    })
+                });
+            } catch (err) {
+                console.error('Failed to post lead to dashboard', err);
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }
+            }
+
             // Construct WhatsApp message
-            const message = `New Service Inquiry\n-------------------\nName: ${name}\nPhone: ${phone}\nService: ${service}\n-------------------\nPlease contact me at your earliest convenience. Thank you!`;
+            const mapsLink = lat && lng ? `\nLocation Link: https://www.google.com/maps?q=${lat},${lng}` : '';
+            const message = `New Service Inquiry\n-------------------\nName: ${name}\nPhone: ${phone}\nService: ${service}\nStreet Address: ${streetAddress}\nMap Link: ${address}\n-------------------\nPlease contact me at your earliest convenience. Thank you!`;
 
             // Encode message for URL
             const encodedMessage = encodeURIComponent(message);
@@ -830,6 +942,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Navigation.init();
         BackToTop.init();
         SmoothScroll.init();
+        LocationHandler.init();
         Form.init();
     });
 
