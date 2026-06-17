@@ -832,55 +832,7 @@ const UCApplianceSlider = {
     }
 };
 
-// ========================================
-// LOCATION PICKER MODULE
-// ========================================
-window.LocationHandler = {
-    init() {
-        document.querySelectorAll('.get-location-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.getLocation(btn);
-            });
-        });
-    },
 
-    getLocation(btn) {
-        const inputField = btn.parentElement.querySelector('input');
-        if (!inputField) return;
-
-        // Visual feedback
-        const originalHtml = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-        
-        if (!inputField.value) {
-            inputField.placeholder = 'Paste Google Maps link here...';
-        }
-
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                (pos) => {
-                    const lat = pos.coords.latitude;
-                    const lng = pos.coords.longitude;
-                    
-                    window.open(`https://www.google.com/maps?q=${lat},${lng}`, '_blank');
-                    
-                    btn.innerHTML = originalHtml;
-                    if(window.Utils) window.Utils.showToast('Google Maps opened. Please copy the link and paste it here.', 'success');
-                },
-                (err) => {
-                    window.open('https://www.google.com/maps', '_blank');
-                    btn.innerHTML = originalHtml;
-                    if(window.Utils) window.Utils.showToast('Please find your location on the map and paste the link.', 'info');
-                },
-                { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
-            );
-        } else {
-            window.open('https://www.google.com/maps', '_blank');
-            btn.innerHTML = originalHtml;
-        }
-    }
-};
 
 // ========================================
 // INITIALIZE APPLICATION
@@ -966,7 +918,6 @@ document.addEventListener('DOMContentLoaded', () => {
         Navigation.init();
         BackToTop.init();
         SmoothScroll.init();
-        LocationHandler.init();
         Form.init();
     });
 
