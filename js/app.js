@@ -18,7 +18,9 @@ const CONFIG = {
     },
     scrollThreshold: 100,
     animationThreshold: 0.1,
-    apiBaseUrl: 'http://localhost:4000' // Update this to production URL on deployment
+    apiBaseUrl: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+        ? 'http://localhost:4000' 
+        : `http://${window.location.hostname}:4000`
 };
 
 // ========================================
@@ -32,6 +34,7 @@ const DOM = {
     navBackdrop: document.getElementById('navBackdrop'),
     navLinks: document.querySelectorAll('.nav-link, .nav-mobile-link'),
     backToTop: document.getElementById('backToTop'),
+    heroQuickForm: document.getElementById('heroQuickForm'),
     contactForm: document.getElementById('contactForm'),
     callbackForm: document.getElementById('callbackForm'),
     quoteForm: document.getElementById('quoteForm'),
@@ -378,18 +381,34 @@ const Form = {
     },
 
     setupLocationButtons() {
+        document.querySelectorAll('input[name="address"]').forEach(input => {
+            input.setAttribute('readonly', 'true');
+            input.addEventListener('click', function(e) {
+                if (this.hasAttribute('readonly')) {
+                    alert("Please click the location button to open Maps, copy the location from the share option, and paste it here.");
+                }
+            });
+        });
+
         document.querySelectorAll('.get-location-btn, #heroLocationBtn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const input = btn.parentElement.querySelector('input[name="address"]');
-                if (window.LocationPicker) {
-                    window.LocationPicker.open(input);
+                if (input) {
+                    input.removeAttribute('readonly');
+                    input.focus();
+                    window.open('https://maps.google.com', '_blank');
                 }
             });
         });
     },
 
     bindEvents() {
+        // Hero Quick Form
+        if (DOM.heroQuickForm) {
+            DOM.heroQuickForm.addEventListener('submit', (e) => this.handleSubmit(e, 'hero'));
+        }
+
         // Contact Form
         if (DOM.contactForm) {
             DOM.contactForm.addEventListener('submit', (e) => this.handleSubmit(e, 'contact'));
