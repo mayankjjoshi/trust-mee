@@ -20,7 +20,7 @@ const CONFIG = {
     animationThreshold: 0.1,
     apiBaseUrl: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
         ? 'http://localhost:4000' 
-        : `http://${window.location.hostname}:4000`
+        : 'https://trustmee-admin.onrender.com'
 };
 
 // ========================================
@@ -474,36 +474,55 @@ const Form = {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         }
 
+        const formData = new FormData(form);
+        const name = formData.get('name');
+        const phone = formData.get('phone');
+        const streetAddress = formData.get('streetAddress');
+        const address = formData.get('address');
+        const service = formData.get('service') || formData.get('problem') || formData.get('message');
+        const lat = form.querySelector('input[name="address"]')?.dataset.lat || null;
+        const lng = form.querySelector('input[name="address"]')?.dataset.lng || null;
+
+        const payload = {
+            name: name,
+            phone: phone,
+            address: streetAddress ? `${streetAddress}\nMap Link: ${address}` : (address || 'Not provided'),
+            lat: lat,
+            lng: lng,
+            problem: service,
+            serviceTimeMins: 60
+        };
+
         // Submit via AJAX to Dashboard API
         try {
-            const formData = new FormData(form);
-            const payload = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                address: formData.get('address'),
-                lat: form.querySelector('input[name="address"]')?.dataset.lat || null,
-                lng: form.querySelector('input[name="address"]')?.dataset.lng || null,
-                problem: formData.get('problem') || formData.get('message') || formData.get('service'),
-            };
-
             const response = await fetch(`${CONFIG.apiBaseUrl}/website/lead`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
 
-            const result = await response.json();
+            const result = await response.json().catch(() => ({}));
 
             if (result.success) {
-                form.reset();
                 Utils.showToast('Message sent successfully! We will contact you soon.', 'success');
-                this.showSuccess(form, formType);
             } else {
-                Utils.showToast('Something went wrong. Please try again.', 'error');
+                console.error('API responded with failure:', result);
             }
         } catch (error) {
-            Utils.showToast('Failed to send message. Please try again.', 'error');
+            console.error('Failed to post lead to dashboard:', error);
         } finally {
+            if (formType === 'hero') {
+                // Construct WhatsApp message
+                const message = `New Service Inquiry\n-------------------\nName: ${name}\nPhone: ${phone}\nService: ${service}\nStreet Address: ${streetAddress || ''}\nMap Link: ${address || ''}\n-------------------\nPlease contact me at your earliest convenience. Thank you!`;
+                const whatsappUrl = `https://wa.me/916351802009?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            }
+
+            form.reset();
+            if (formType !== 'hero') {
+                this.showSuccess(form, formType);
+            }
+
             // Restore button
             if (submitBtn) {
                 submitBtn.disabled = false;
@@ -866,75 +885,7 @@ document.addEventListener('DOMContentLoaded', () => {
     CurrentYear.init();
     UCApplianceSlider.init();
 
-    // Hero Quick Form WhatsApp Integration
-    const heroForm = document.getElementById('heroQuickForm');
-    if (heroForm) {
-        heroForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
 
-            const name = document.getElementById('heroName').value.trim();
-            const phone = document.getElementById('heroPhone').value.trim();
-            const service = document.getElementById('heroService').value.trim();
-            const streetAddress = document.getElementById('heroStreet').value.trim();
-            const address = document.getElementById('heroAddress').value.trim();
-
-            if (!name || !phone || !service || !streetAddress || !address) {
-                alert('Please fill in all fields');
-                return;
-            }
-
-            const submitBtn = heroForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            }
-
-            const addressInput = document.getElementById('heroAddress');
-            const lat = addressInput?.dataset.lat || null;
-            const lng = addressInput?.dataset.lng || null;
-
-            try {
-                // Post to Dashboard API
-                await fetch(`${CONFIG.apiBaseUrl}/website/lead`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        name: name,
-                        phone: phone,
-                        address: streetAddress ? `${streetAddress}\nMap Link: ${address}` : address,
-                        lat: lat,
-                        lng: lng,
-                        problem: service,
-                        serviceTimeMins: 60
-                    })
-                });
-            } catch (err) {
-                console.error('Failed to post lead to dashboard', err);
-            } finally {
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnText;
-                }
-            }
-
-            // Construct WhatsApp message
-            const mapsLink = lat && lng ? `\nLocation Link: https://www.google.com/maps?q=${lat},${lng}` : '';
-            const message = `New Service Inquiry\n-------------------\nName: ${name}\nPhone: ${phone}\nService: ${service}\nStreet Address: ${streetAddress}\nMap Link: ${address}\n-------------------\nPlease contact me at your earliest convenience. Thank you!`;
-
-            // Encode message for URL
-            const encodedMessage = encodeURIComponent(message);
-
-            // WhatsApp Business API link
-            const whatsappUrl = `https://wa.me/916351802009?text=${encodedMessage}`;
-
-            // Open WhatsApp in new window
-            window.open(whatsappUrl, '_blank');
-
-            // Reset form
-            heroForm.reset();
-        });
-    }
 
     // Deferred modules (after first paint)
     requestAnimationFrame(() => {
